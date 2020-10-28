@@ -1,0 +1,66 @@
+<div class="footer__content container">
+    <section class="footer__items--about section about">
+        <div class="section__about ">
+            <h3 class="section--title">About Us</h3>
+            <div class="section--body">
+                <p class="section--description">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the
+                    leap into</p>
+            </div>
+        </div>
+    </section>
+    <section class="footer__items--cta section cta">
+        <div class="section__cta">
+            <h3 class="section--title">Subscribe for latest updates</h3>
+            <div class="section--body--cta">
+                <form class="section--email-input flex" action="{% url 'blog:subscribe' %}?next={{request.path}}"
+                    method="POST">
+                    {% csrf_token %}
+                    {% for field in email_subscribe_form %}
+                    {{field}}
+                    {{field.errors}}
+                    {% endfor %}
+                    <button class="btn sub-btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="footer__items--links section links">
+        <div class="section__links ">
+            <h3 class="section--title">Helpful links</h3>
+            <div class="section--body">
+                <ul class="section--link-list">
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:about' %}">About Us</a></li>
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:contact' %}">Contact Us</a>
+                    </li>
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:privacy_policy' %}">Privacy
+                            Policy</a></li>
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:terms' %}">Terms of
+                            Service</a></li>
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:report' %}">Report an
+                            issue</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="footer__items--ads section ads">
+        <div class="section__ads">
+            <h3 class="section--title">Ads by Google</h3>
+            <div class="section--body">
+                <div class="section--ads-area">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<section class="footer__bar bar">
+    <div class="footer__bar--text container">
+        Copyright &#169 2020 <a class="default-link" href="{% url 'blog:home' %}">Webdev.com</a> All right reserved
+    </div>
+</section>

@@ -1,0 +1,170 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.center-align {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #ff7171;
+}
+
+.default-link {
+  text-decoration: none;
+  color: #ff7171;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+.btn {
+  padding: 0.7rem;
+  background: #ebecf1;
+  border: none;
+  outline: none;
+}
+
+.message-error {
+  font-size: 0.9rem;
+  color: #d11a2a;
+  font-weight: 500;
+}
+
+.message-info {
+  font-size: 0.8rem;
+  color: #6e6d6d;
+  font-weight: 500;
+}
+
+.message-success {
+  font-size: 0.9rem;
+  color: #3cb371;
+  font-weight: 500;
+}
+
+.errorlist {
+  color: #d11a2a;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0 0 0;
+}
+
+.notification-container {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, -10%);
+          transform: translate(-50%, -10%);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 50vw;
+  text-align: center;
+  background-color: #ebecf1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_block %}
+<title>Home</title>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% if not latest_post and categories %}
+<style>
+    .sub-form {
+        width: 450px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
+
+    .sub-form>input {
+        width: 100%;
+        padding: .5rem;
+        border: 1px solid #851de0;
+        border-radius: .2rem;
+        outline: none;
+        margin-right: .5rem;
+    }
+
+    .sub-form>.btn {
+        background-color: #851de0;
+        border-radius: .2rem;
+        color: #ebecf1;
+        cursor: pointer;
+    }
+</style>
+{% endif %}
+{% endblock %}
+
+{% block body_block %}
+
+{% for message in messages %}
+<div class="notification-container">
+    <p class="notification message-info" id='notification'>{{message}}</p>
+</div>
+{% endfor %}
+
+<div class="main">
+    {% if latest_post and categories %}
+    <section class="header">
+        {% if latest_post %}
+        <h1 class="section-title">Latest Post</h1>
+        <div class="header--latest_post">
+            {% for post in latest_post %}
+            <div class="latest-post">
+                {% if post.featured_image %}
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
+                {% else %}
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                {% endif %}
+                <section class="latest-post--info-container">
+                    <p class="category">{{post.category}}</p>
+                    <h3>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a>
+                    </h3>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+    <section class="body">
+        {% for category in categories%}
+        {% if category.posts %}
+        <div class="body--container">
+            <h1>
+                <a class="section-title" href="{% url 'blog:category' slug=category.obj.slug %}">
+                    {{category.obj.name}}
+                </a>
+            </h1>
+            <div class="posts-grid">
+                {% for post in category.posts %}
+                <div class="post-container" data-category={{post.category|lower}}>
+                    {% if post.featured_image %}
+                    <img class="featured_image post_image" src="{{post.featured_image.url}}" alt="thumbnail">
+                    {% else %}
+                    <img class="featured_image no_image post_image" src="{% static 'media/no_image.png' %}" alt="">
+                    {% endif %}
+                    <div class="post">
+                        <p class="category">{{post.category}}</p>
+                        <h2>
+                            <a class="title post--title"
+                                href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatechars:55}}</a>
+                        </h2>
+                        <div class="meta">
+                            <p class="meta--author">{{post.author}}</p>
+                            <p class="meta--publish_date">{{post.publish_date}}</p>
+                        </div>
+                        <article class="post--excerpt">
+                            {{post.body|safe|truncatewords_html:15}}
+                        </article>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="btn default-link show-btn" href="{% url 'blog:category' slug=category.obj.slug %}">
+                Show more
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </section>
+    {% else %}
+    <h3 style="font-family: 'Josefin Sans', sans-serif; color: #41444b;">Post will be added soon...<br>Subscribe us to
+        get notified.</h3>
+    <form class="sub-form" action="{% url 'blog:subscribe' %}?next={{request.path}}" method="POST">
+        {% csrf_token %}
+        {% for field in email_subscribe_form %}
+        {{field}}
+        {{field.errors}}
+        {% endfor %}
+        <button class="btn" type="submit">Subscribe</button>
+    </form>
+    {% endif %}
+</div>
+
+{% endblock %}

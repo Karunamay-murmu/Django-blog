@@ -1,0 +1,22 @@
+.profile {
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
+.profile--info-container {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.profile .label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.profile--info {
+  font-family: "Nanum Gothic", sans-serif;
+}
+/*# sourceMappingURL=profile.css.map */

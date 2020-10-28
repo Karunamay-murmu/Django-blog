@@ -1,0 +1,124 @@
+@import "./variable.scss";
+
+html {
+    height: 100%;
+    width: 100%;
+}
+body {
+    height: 100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $text;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.17rem;
+}
+h4 {
+    font-size: 1rem;
+}
+h5 {
+    font-size: 0.83rem;
+}
+h6 {
+    font-size: 0.67rem;
+}
+p {
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+.center-align {
+    align-items: center;
+}
+.list {
+    list-style: none;
+}
+.link {
+    text-decoration: none;
+    color: $link;
+}
+.default-link {
+    text-decoration: none;
+    color: $link;
+    font-size: 0.9rem;
+    font-weight: $semi-bold;
+}
+.container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 2rem;
+}
+@media screen and (max-width: 900px) {
+    .container {
+        padding: 0.5rem;
+    }
+}
+.btn {
+    padding: 0.7rem;
+    background: $text-light;
+    border: none;
+    outline: none;
+}
+.message-error {
+    font-size: 0.9rem;
+    color: $error;
+    font-weight: 500;
+}
+.message-info {
+    font-size: 0.8rem;
+    color: $info;
+    font-weight: 500;
+}
+.message-success {
+    font-size: 0.9rem;
+    color: $success;
+    font-weight: 500;
+}
+.errorlist {
+    color: $error;
+    list-style: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0 0 0;
+}
+
+.notification-container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -10%);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 50vw;
+    text-align: center;
+    background-color: $white-bg;
+    justify-content: center;
+    transition: 300ms;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script defer src="{% static 'js/blog.js' %}"></script>
+    {% block head_block %}
+    {% endblock %}
+
+</head>
+
+<body>
+    <header id="header">
+        {% include 'navbar.html' %}
+    </header>
+
+    <main id="main">
+        <section class='main-content container'>
+            {% block body_block %}
+            {% endblock %}
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        {% include 'footer.html' %}
+    </footer>
+    {% block internal_style %}
+    {% endblock %}
+    {% block script_block %}
+    {% endblock %}
+</body>
+
+</html>
