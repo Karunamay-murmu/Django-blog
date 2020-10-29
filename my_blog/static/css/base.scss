@@ -21,7 +21,7 @@
 
         &__menu__item {
             margin: 0.2rem;
-            padding: 1rem 1rem;
+            padding: 0.5rem 0.5rem;
             letter-spacing: 1px;
             font-size: 0.9rem;
             transition: 300ms;
@@ -32,11 +32,6 @@
                 border-radius: 0.3rem;
                 background-color: $hover;
             }
-        }
-
-        &__logo,
-        &__menu {
-            justify-content: space-between;
         }
 
         &__auth {
@@ -75,37 +70,34 @@
         }
     }
 }
-
 .search-bar {
-    flex-grow: 1;
-    margin: 0 1rem;
     position: relative;
 
     &--input {
-        width: 100%;
-        border-radius: 0.2rem;
+        padding: 0.7rem;
         border: none;
-        padding: 0.8rem;
+        border-top-left-radius: 0.2rem;
+        border-bottom-left-radius: 0.2rem;
         outline: none;
-        font-size: 0.9rem;
-        font-family: $text;
+        float: left;
+        background: #f1f1f1;
+        font-weight: $bold;
     }
+
     &__btn {
-        position: absolute;
+        float: left;
+        padding: 0.7rem 1rem;
+        background-color: $white-bg;
         border: none;
         border-top-right-radius: 0.2rem;
         border-bottom-right-radius: 0.2rem;
         outline: none;
-        background: $white-bg;
-        padding: 0.52rem 1rem;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
+        border-left: none;
         cursor: pointer;
+
         &--icon {
-            margin-top: 0.2rem;
-            width: 1.2rem;
             fill: $primary;
+            width: 1rem;
         }
     }
 }
@@ -129,6 +121,20 @@
         &__menu {
             display: flex;
             flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin: 0 1rem;
+
+            &--search-bar {
+                margin: 0 1rem;
+                flex-grow: 1;
+            }
+            .search-bar {
+                &--input {
+                    width: 70%;
+                }
+            }
         }
         &__menu-icon {
             &--burger {
@@ -151,6 +157,16 @@
             transform: translateX(-100%);
             z-index: 5;
 
+            &--search-bar {
+                padding: 1rem 0.5rem;
+            }
+
+            .search-bar {
+                &--input {
+                    width: 100%;
+                }
+            }
+
             .list {
                 margin: 1rem 0 3rem;
             }
@@ -167,7 +183,7 @@
         #cross {
             position: absolute;
             top: 1rem;
-            left: 2.2rem;
+            left: 1.8rem;
             z-index: 10;
         }
     }
