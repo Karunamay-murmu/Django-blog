@@ -123,22 +123,34 @@ p {
   outline: none;
 }
 
-.message-error {
-  font-size: 0.9rem;
-  color: #d11a2a;
-  font-weight: 500;
-}
-
-.message-info {
+.alert-error {
   font-size: 0.8rem;
-  color: #6e6d6d;
-  font-weight: 500;
+  color: #d11a2a;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  background-color: #f2dede;
+  border: 1px solid #d11a2a;
 }
 
-.message-success {
-  font-size: 0.9rem;
-  color: #3cb371;
-  font-weight: 500;
+.alert-info {
+  font-size: 0.8rem;
+  color: #31708f;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  background-color: #d9edf7;
+  border: 1px solid #31708f;
+}
+
+.alert-success {
+  font-size: 0.8rem;
+  color: #597151;
+  background-color: #dff0d8;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  border: 1px solid #597151;
 }
 
 .errorlist {
@@ -150,21 +162,11 @@ p {
 }
 
 .notification-container {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  -webkit-transform: translate(-50%, -10%);
-          transform: translate(-50%, -10%);
-  padding: 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  width: 50vw;
+  margin: 0 0 1rem 0;
   text-align: center;
   background-color: #ebecf1;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-transition: 300ms;
   transition: 300ms;
+  z-index: 1;
 }
 /*# sourceMappingURL=global.css.map */

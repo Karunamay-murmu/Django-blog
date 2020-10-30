@@ -16,7 +16,7 @@
 .card__text--meta {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #6e6d6d;
+  color: #31708f;
 }
 
 .card__text--meta span {
@@ -34,11 +34,11 @@
 }
 
 .card__btn--edit {
-  color: #6e6d6d;
+  color: #31708f;
 }
 
 .card__btn--view {
-  color: #6e6d6d;
+  color: #31708f;
 }
 
 .card__btn--delete {
@@ -55,7 +55,7 @@
 
 .no-content {
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: #ebecf1;
   position: relative;
 }

@@ -85,20 +85,32 @@ p {
     border: none;
     outline: none;
 }
-.message-error {
-    font-size: 0.9rem;
+.alert-error {
+    font-size: 0.8rem;
     color: $error;
-    font-weight: 500;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+    background-color: #f2dede;
+    border: 1px solid $error;
 }
-.message-info {
+.alert-info {
     font-size: 0.8rem;
     color: $info;
-    font-weight: 500;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+    background-color: #d9edf7;
+    border: 1px solid $info;
 }
-.message-success {
-    font-size: 0.9rem;
+.alert-success {
+    font-size: 0.8rem;
     color: $success;
-    font-weight: 500;
+    background-color: #dff0d8;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+    border: 1px solid $success;
 }
 .errorlist {
     color: $error;
@@ -109,16 +121,13 @@ p {
 }
 
 .notification-container {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -10%);
-    padding: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    width: 50vw;
+    // position: absolute;
+    // left: 50%;
+    // transform: translate(-50%, -10%);
+    // width: 80%;
+    margin: 0 0 1rem 0;
     text-align: center;
     background-color: $white-bg;
-    justify-content: center;
     transition: 300ms;
+    z-index: 1;
 }

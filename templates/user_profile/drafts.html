@@ -2,67 +2,74 @@
 {% load static %}
 
 {% block dashboard_right_block_head %}
-<title>Draft</title>
-<script type="module" defer src="{% static 'js/modal.js' %}"></script>
-<link rel="stylesheet" href="{% static 'css/itemList.css' %}">
-<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <title>Draft</title>
+    <script type="module" defer src="{% static 'js/modal.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/itemList.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+{% endblock %}
 
+{% block alert_block %}
+    {% if messages %}
+        {% for message in messages %}
+        {% include 'message.html' with alert='alert-info' message=message %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 {% block dashboard_right_block %}
-{% if drafts %}
-{% for draft in drafts %}
-<div class="card">
-    <div class="card__text">
-        <h3 class="card__text--title">{{draft.title}}</h3>
-        <p class="card__text--meta">Category: <span>{{draft.category}}</span> </p>
-        <p class="card__text--meta">Tags:
-            {% if draft.tags %}
-            <span>{{draft.tags}}</span>
-            {% else %}
-            <span></span>
-            {% endif %}
-        </p>
+    {% if drafts %}
+        {% for draft in drafts %}
+        <div class="card">
+            <div class="card__text">
+                <h3 class="card__text--title">{{draft.title}}</h3>
+                <p class="card__text--meta">Category: <span>{{draft.category}}</span> </p>
+                <p class="card__text--meta">Tags:
+                    {% if draft.tags %}
+                    <span>{{draft.tags}}</span>
+                    {% else %}
+                    <span></span>
+                    {% endif %}
+                </p>
 
-    </div>
-    <div class="card__btn">
-        <a class="link card__btn--edit" href="{% url 'blog:edit-or-publish-draft' id=draft.postId %}">Edit</a>
-        <button class="card__btn--delete delete" type="text" name="delete" data-extra="{{draft.title}}"
-            value="{{draft.postId}}">Delete</button>
-    </div>
-</div>
-{% endfor %}
-<div class="modal-container" id="modal-container">
-    <form method="POST" action="" class="modal">
-        {% csrf_token %}
-        <div class="modal__header flex center-align">
-            <svg class="fas fa-trash-alt modal__header--delete-icon" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512">
-                <path
-                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" />
-            </svg>
-            <p class="modal__header--text">Delete the post?</p>
-            <svg class="fas fa-times modal__header--close-icon close" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 352 512">
-                <path
-                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
-            </svg>
+            </div>
+            <div class="card__btn">
+                <a class="link card__btn--edit" href="{% url 'blog:edit-or-publish-draft' id=draft.postId %}">Edit</a>
+                <button class="card__btn--delete delete" type="text" name="delete" data-extra="{{draft.title}}"
+                    value="{{draft.postId}}">Delete</button>
+            </div>
         </div>
-        <p class="modal__body">Are you sure you want to delete the post with Title: <br> <span
-                id="spanPostTitle"></span>
-        </p>
-        <hr>
-        <div class="modal__btn">
-            <button class="btn modal__btn--confirm" id="confirm-delete" type="submit" name="id"
-                value={{post.postId}}>Delete</button>
+        {% endfor %}
+        <div class="modal-container" id="modal-container">
+            <form method="POST" action="" class="modal">
+                {% csrf_token %}
+                <div class="modal__header flex center-align">
+                    <svg class="fas fa-trash-alt modal__header--delete-icon" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path
+                            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" />
+                    </svg>
+                    <p class="modal__header--text">Delete the post?</p>
+                    <svg class="fas fa-times modal__header--close-icon close" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 352 512">
+                        <path
+                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+                    </svg>
+                </div>
+                <p class="modal__body">Are you sure you want to delete the post with Title: <br> <span
+                        id="spanPostTitle"></span>
+                </p>
+                <hr>
+                <div class="modal__btn">
+                    <button class="btn modal__btn--confirm" id="confirm-delete" type="submit" name="id"
+                        value={{post.postId}}>Delete</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-{% else %}
-<div class="no-content">
-    <div class="wrapper">
-        <p class="info">No Drafts</p>
-    </div>
-</div>
-{% endif %}
+    {% else %}
+        <div class="no-content">
+            <div class="wrapper">
+                <p class="info">No Drafts</p>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
