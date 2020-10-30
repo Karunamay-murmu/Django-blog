@@ -3,9 +3,9 @@
 .editor {
     padding: 1rem 1rem 5rem 1rem;
     border-radius: 0.3rem;
+    max-width: 1024px;
 
     &__label {
-        padding-top: 0.5rem;
         font-family: $large-text;
         color: $text-dark;
     }
@@ -100,7 +100,8 @@
         }
     }
     &__meta-fields {
-        margin-top: 2rem;
+        max-width: 550px;
+        margin-top: 1.5rem;
         border-radius: 0.3rem;
 
         input,

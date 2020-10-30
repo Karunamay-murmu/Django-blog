@@ -32,9 +32,10 @@ def postForm(modelName):
                     'placeholder': 'Parmalink',
                     'autocomplete': 'off'
                 }),
-                'meta_description': forms.TextInput(attrs={
+                'meta_description': forms.Textarea(attrs={
                     'placeholder': 'Meta description',
-                    'autocomplete': 'off'
+                    'autocomplete': 'off',
+                    'rows': 10
                 })
             }
 

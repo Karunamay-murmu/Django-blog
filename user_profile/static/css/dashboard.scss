@@ -8,7 +8,7 @@
     z-index: 9999;
 
     .nav-bar {
-        padding: 0.8rem;
+        padding: 0.5rem 1rem;
         svg {
             fill: $link;
             width: 1.5rem;
@@ -157,7 +157,7 @@
             position: fixed;
             flex-direction: column;
             height: 100vh;
-            top: 4.8rem;
+            top: 3.6rem;
 
             &__navitems {
                 height: 70vh;
@@ -193,7 +193,7 @@
         flex-direction: column !important;
         &__sidebar {
             &__navitems {
-                margin-top: 4.5rem;
+                margin-top: 3.6rem;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -237,15 +237,13 @@
             position: fixed;
             height: 100%;
             z-index: 5;
-            background-color: #fff;
 
             &__navitems {
-                height: 70vh;
+                height: 100%;
                 overflow-y: auto;
                 flex-direction: column;
-                justify-content: flex-start !important;
-                box-shadow: none;
-
+                justify-content: flex-start;
+                background-color: $white-bg;
                 &--link {
                     background-color: rgba(43, 49, 55, 0.1);
                     margin-bottom: 1rem;

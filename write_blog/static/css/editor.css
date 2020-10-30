@@ -1,10 +1,10 @@
 .editor {
   padding: 1rem 1rem 5rem 1rem;
   border-radius: 0.3rem;
+  max-width: 1024px;
 }
 
 .editor__label {
-  padding-top: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   color: #41444b;
 }
@@ -150,7 +150,8 @@
 }
 
 .editor__meta-fields {
-  margin-top: 2rem;
+  max-width: 550px;
+  margin-top: 1.5rem;
   border-radius: 0.3rem;
 }
 
