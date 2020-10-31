@@ -20,6 +20,7 @@
 
 <body>
     <div id="content">
+        {% include 'message.html' with message=message %}
         <div class="wrapper flex">
             <form id="signup-form" class="auth-form" method="POST">
                 <h2 class="auth-form__name">Create account</h2>

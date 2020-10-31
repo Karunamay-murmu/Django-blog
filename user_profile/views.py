@@ -97,7 +97,7 @@ class Comments(Dashboard):
             else:
                 approve = comment.approveOrDisapprove()
                 messages.info(
-                    request, 'comment approved' if approve else 'comment Disapprove')
+                    request, 'Comment Approved' if approve else 'Comment Disapprove', extra_tags='info')
 
                 return redirect(request.path)
 
@@ -139,7 +139,8 @@ class EditProfile(LoginRequiredMixin, UpdateView):
         else:
             user.isAuthor = False
 
-        messages.success(self.request, 'Profile saved successfully')
+        messages.success(
+            self.request, 'Profile saved successfully', extra_tags='success')
         user.save()
 
         return super().form_valid(form)

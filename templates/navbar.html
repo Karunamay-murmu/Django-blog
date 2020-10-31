@@ -48,8 +48,7 @@
 			<a class="auth__btn link btn" href="{% url 'registration:log_out' %}">Logout</a>
 		</div>
 		{% else %}
-		<div class="auth flex flex-row"><a class="auth__btn link btn" href="{% url 'registration:sign_up' %}">Become An
-				Author</a>
+		<div class="auth flex flex-row"><a class="auth__btn link btn" href="{% url 'registration:sign_up' %}">Write</a>
 			<a class="auth__btn link btn" href="{% url 'registration:log_in' %}">Login</a>
 		</div>
 		{% endif %}

@@ -31,9 +31,7 @@
 
 <body>
     <div id="content">
-        {% for message in messages %}
-        <p class="notification message-success">{{message}}</p>
-        {% endfor %}
+        {% include 'message.html' with message=message %}
         <div class="wrapper flex">
             <form id="signup-form" class="auth-form" method="POST">
                 <h2 class="auth-form__name">Login</h2>

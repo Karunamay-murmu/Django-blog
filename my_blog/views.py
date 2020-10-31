@@ -69,6 +69,9 @@ class CategoryPost(TemplateView):
 
         page_number = self.request.GET.get('page')
         posts = post_per_page.get_page(page_number)
+
+        context['category_name'] = category_name
+
         if posts:
             context['posts'] = posts
         else:
@@ -93,17 +96,18 @@ class PostPageView(View):
         nxtPost = None
         prePost = None
 
-        for i, p in enumerate(all_posts):
-            if p == post:
-                if i == 0:
-                    nxtPost = all_posts[i + 1]
-                elif i == len(all_posts) - 1:
-                    prePost = all_posts[i - 1]
-                else:
-                    nxtPost = all_posts[i + 1]
-                    prePost = all_posts[i - 1]
-            else:
-                print('not found')
+        # if len(all_posts) >= 2:
+        #     for i, p in enumerate(all_posts):
+        #         if p == post:
+        #             if i == 0:
+        #                 nxtPost = all_posts[i + 1]
+        #             elif i == len(all_posts) - 1:
+        #                 prePost = all_posts[i - 1]
+        #             else:
+        #                 nxtPost = all_posts[i + 1]
+        #                 prePost = all_posts[i - 1]
+        #         else:
+        #             print('not found')
 
         '''
         Retrive all the comments from the post
@@ -113,16 +117,16 @@ class PostPageView(View):
 
         context_dict = {
             'post': post,
-            'latest_post': latest_posts[1:4],
-            'top_post': latest_posts[0],
-            'pre_post': prePost,
-            'nxt_post': nxtPost,
+            # 'latest_post': latest_posts[1:4],
+            # 'top_post': latest_posts[0],
+            # 'pre_post': prePost,
+            # 'nxt_post': nxtPost,
             'related_category_post': related_category_post,
             'form': CommentForm(),
             'comments': comments
         }
 
-        return render(request, self.template_name, context=context_dict)
+        return render(request, self.template_name, context_dict)
 
     def post(self, request, *args, **kwargs):
         '''
@@ -141,14 +145,16 @@ class PostPageView(View):
                 comment.post = post
                 comment.user = request.user
                 comment.save()
-                messages.info(request, 'Your comment is awaiting moderation')
+
+                messages.info(
+                    request, 'Your comment is awaiting moderation', extra_tags='info')
 
                 return redirect(request.path)
 
             return render(request, self.template_name, {'form': form})
 
 
-class CategoryListView(View):
+class Home(View):
     def get(self, request, *args, **kwargs):
 
         categories = Categorie.objects.all()
@@ -183,16 +189,14 @@ class ContactFormView(CreateView):
     def form_valid(self, form):
         path = self.request.path
         is_contact_path = ('/contact/' == path)
-        feedback_message_identifier = "Contact with us" if is_contact_path else "feedback"
+        feedback_message_identifier = "contact with us" if is_contact_path else "feedback"
 
         form_data = form.save(commit=False)
         form_data.message_type = path[1:len(path) - 1]
         form_data.save()
 
         messages.info(
-            self.request, f"Thanks for the {feedback_message_identifier}. You'll recive a email from us shortly")
-        problem_description = form.cleaned_data['message']
-        email = form.cleaned_data['email']
+            self.request, f"Thank you for {feedback_message_identifier}. You'll recive a email from us shortly", extra_tags='info')
 
         return super().form_valid(form)
 

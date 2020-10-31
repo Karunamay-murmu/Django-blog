@@ -317,7 +317,7 @@
   resize: vertical;
   border-radius: 0.3rem;
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Nanum Gothic", sans-serif;
 }
 
@@ -325,7 +325,7 @@
   background-color: #851de0;
   border-radius: 0.3rem;
   margin: 1rem 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #ebecf1;
   cursor: pointer;
   -ms-flex-item-align: start;

@@ -1,3 +1,7 @@
-<div class="notification-container" role="alert">
-    <p class="{{alert}}">{{message}}</p>
-</div>
+{% if messages %}
+    {% for message in messages %}
+        <div class="notification-container" role="alert">
+            <p class="alert-{{message.extra_tags}}">{{message}}</p>
+        </div>
+    {% endfor %}
+{% endif %}

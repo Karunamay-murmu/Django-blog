@@ -23,7 +23,8 @@ class User_signup(FormView):
 
     def dispatch(self, request):
         if request.user.is_authenticated:
-            messages.info(request, 'You are alreay logeed in')
+            messages.info(request, 'You are alreay logeed in',
+                          extra_tags='info')
 
             return HttpResponseRedirect(reverse('blog:home'))
 
@@ -34,7 +35,7 @@ class User_signup(FormView):
         user.save()
 
         messages.success(
-            self.request, 'Account created successfully. Please Login!')
+            self.request, 'Account created successfully. Please Login!', extra_tags='success')
 
         return super().form_valid(form)
 
@@ -48,7 +49,8 @@ class User_login(FormView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            messages.info(request, 'You are alreay logeed in')
+            messages.info(request, 'You are alreay logeed in',
+                          extra_tags='info')
 
             return HttpResponseRedirect(reverse('blog:home'))
 

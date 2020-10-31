@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from .views import (
-    CategoryListView,
+    Home,
     CategoryPost,
     PostPageView,
     ContactFormView,
@@ -17,7 +17,7 @@ from write_blog.views import EditOrPublishDraft, EditOrSwitchPostToDraft
 app_name = 'blog'
 
 urlpatterns = [
-    path('', CategoryListView.as_view(), name='home'),
+    path('', Home.as_view(), name='home'),
     path('blog/category/<slug:slug>',
          CategoryPost.as_view(), name='category'),
     path('blog/post/<str:id>/<slug:slug>',

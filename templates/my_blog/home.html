@@ -32,14 +32,11 @@
 {% endif %}
 {% endblock %}
 
+{% block alert_block %}
+    {% include 'message.html' with message=message %}
+{% endblock %}
+
 {% block body_block %}
-
-{% for message in messages %}
-<div class="notification-container">
-    <p class="notification message-info" id='notification'>{{message}}</p>
-</div>
-{% endfor %}
-
 <div class="main">
     {% if latest_post and categories %}
     <section class="header">
@@ -123,5 +120,4 @@
     </form>
     {% endif %}
 </div>
-
 {% endblock %}

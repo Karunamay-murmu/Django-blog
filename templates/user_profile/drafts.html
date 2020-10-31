@@ -9,11 +9,7 @@
 {% endblock %}
 
 {% block alert_block %}
-    {% if messages %}
-        {% for message in messages %}
-        {% include 'message.html' with alert='alert-info' message=message %}
-        {% endfor %}
-    {% endif %}
+    {% include 'message.html' with message=message %}
 {% endblock %}
 
 {% block dashboard_right_block %}

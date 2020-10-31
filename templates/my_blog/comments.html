@@ -1,5 +1,5 @@
 <div class="post__comment-list">
-
+    {% include 'message.html' with message=message %}
     <h2 class="post__comment-list--count">{{comments.count}} comment{{comments.count|pluralize}}</h2>
     {% for comment in comments %}
     <div class="post__comment">
@@ -13,9 +13,4 @@
         <p class="post__comment--body">{{comment.comment}}</p>
     </div>
     {%  endfor %}
-    {% for message in messages %}
-    <p class="message-info post__comment--alert-notification">{{message}}</p>
-
-    {% endfor %}
-
 </div>

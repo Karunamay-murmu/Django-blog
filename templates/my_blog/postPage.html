@@ -32,59 +32,6 @@
             </article>
         </div>
         <div class="post__body--side-container">
-            <aside class="post__body--side-bar">
-                <div class="latest-post card">
-                    <p class="card--title">Latest Post</p>
-                    <div class="latest-post-container">
-                        <div class="card__post--top flex flex-column">
-                            {% if top_post.featured_image %}
-                            <img class="card__post--top--image" src="{{top_post.featured_image.url}}" alt="thumbnail">
-                            {% else %}
-                            <div class="card__post--top--image">
-                                <svg class="post-card--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path
-                                        d="M464 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM112 120c-30.928 0-56 25.072-56 56s25.072 56 56 56 56-25.072 56-56-25.072-56-56-56zM64 384h384V272l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L208 320l-55.515-55.515c-4.686-4.686-12.284-4.686-16.971 0L64 336v48z" />
-                                </svg>
-                            </div>
-                            {% endif %}
-                            <div class="card__post--top--details flex-column flex">
-                                <a href="{% url 'blog:post_detail' id=top_post.postId slug=top_post.slug %}"
-                                    class="card__post--top--title">{{top_post.title|truncatechars:55}}</a>
-                                <article class="card__post--top--body">
-                                    {{top_post.body|safe|truncatewords_html:30}}
-                                </article>
-                            </div>
-                        </div>
-                        <div class="card__post">
-                            {% for post in latest_post %}
-                            <div class="card__post--container flex center-align">
-                                {% if post.featured_image %}
-                                <img class='thumbnail' src="{{post.featured_image.url}}" alt="" width="50px"
-                                    height="auto">
-                                {% else %}
-                                <div class="thumbnail--no-image">
-                                    <svg class="thumbnail--svg" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512">
-                                        <path
-                                            d="M464 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM112 120c-30.928 0-56 25.072-56 56s25.072 56 56 56 56-25.072 56-56-25.072-56-56-56zM64 384h384V272l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L208 320l-55.515-55.515c-4.686-4.686-12.284-4.686-16.971 0L64 336v48z" />
-                                    </svg>
-                                </div>
-                                {% endif %}
-                                <a href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}"
-                                    class="card__post--list">{{post.title|truncatechars:55}}</a>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card">
-                    <p class="card--title">ads by google</p>
-                    <div class="card__ad-box--right">
-                    </div>
-                </div>
-
-            </aside>
         </div>
     </div>
     <div class="post__change flex">
@@ -117,14 +64,16 @@
         </div>
         {% endif %}
     </div>
-    <div class="post__footer-posts">
-        <h1 class="footer-posts-heading">Related Posts</h1>
-        <div class="footer-posts-container flex">
-            {% for post in related_category_post %}
-            {% include './postCard.html' with post=post %}
-            {% endfor %}
+    {% if related_category_post %}
+        <div class="post__footer-posts">
+            <h1 class="footer-posts-heading">Related Posts</h1>
+            <div class="footer-posts-container flex">
+                {% for post in related_category_post %}
+                {% include './postCard.html' with post=post %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endif %}
     {% include './comments.html' %}
     {% include './commentForm.html' %}
 
