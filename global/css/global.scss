@@ -88,18 +88,12 @@ p {
 .alert-error {
     font-size: 0.8rem;
     color: $error;
-    padding: 1rem;
-    font-weight: 700;
-    border-radius: 0.2rem;
     background-color: #f2dede;
     border: 1px solid $error;
 }
 .alert-info {
     font-size: 0.8rem;
     color: $info;
-    padding: 1rem;
-    font-weight: 700;
-    border-radius: 0.2rem;
     background-color: #d9edf7;
     border: 1px solid $info;
 }
@@ -107,9 +101,6 @@ p {
     font-size: 0.8rem;
     color: $success;
     background-color: #dff0d8;
-    padding: 1rem;
-    font-weight: 700;
-    border-radius: 0.2rem;
     border: 1px solid $success;
 }
 .errorlist {
@@ -123,7 +114,14 @@ p {
 .notification-container {
     margin: 0 0 1rem 0;
     text-align: center;
-    background-color: $white-bg;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
     transition: 300ms;
     z-index: 1;
+}
+
+.close-alert-icon {
+    width: 0.9rem;
+    fill: $secondary;
 }

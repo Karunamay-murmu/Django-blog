@@ -336,6 +336,7 @@
 .footer__bar--text {
   color: #ebecf1;
   font-size: 0.9rem;
+  padding: 2rem 1rem;
 }
 
 @media only screen and (max-width: 1024px) {

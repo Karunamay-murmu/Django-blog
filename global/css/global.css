@@ -126,9 +126,6 @@ p {
 .alert-error {
   font-size: 0.8rem;
   color: #d11a2a;
-  padding: 1rem;
-  font-weight: 700;
-  border-radius: 0.2rem;
   background-color: #f2dede;
   border: 1px solid #d11a2a;
 }
@@ -136,9 +133,6 @@ p {
 .alert-info {
   font-size: 0.8rem;
   color: #31708f;
-  padding: 1rem;
-  font-weight: 700;
-  border-radius: 0.2rem;
   background-color: #d9edf7;
   border: 1px solid #31708f;
 }
@@ -147,9 +141,6 @@ p {
   font-size: 0.8rem;
   color: #597151;
   background-color: #dff0d8;
-  padding: 1rem;
-  font-weight: 700;
-  border-radius: 0.2rem;
   border: 1px solid #597151;
 }
 
@@ -164,9 +155,16 @@ p {
 .notification-container {
   margin: 0 0 1rem 0;
   text-align: center;
-  background-color: #ebecf1;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.2rem;
   -webkit-transition: 300ms;
   transition: 300ms;
   z-index: 1;
+}
+
+.close-alert-icon {
+  width: 0.9rem;
+  fill: #52575d;
 }
 /*# sourceMappingURL=global.css.map */
