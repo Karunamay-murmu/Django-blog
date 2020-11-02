@@ -18,22 +18,22 @@
 }
 
 .editor__fields .title input::-webkit-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
 }
 
 .editor__fields .title input:-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
 }
 
 .editor__fields .title input::-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
 }
 
 .editor__fields .title input::placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
 }
 
@@ -102,28 +102,28 @@
 }
 
 .editor__fields__input input::-webkit-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__fields__input input:-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__fields__input input::-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__fields__input input::placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__fields__input--select select {
   font-size: 1rem;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   width: 200px;
   padding: 0.5rem;
   border-radius: 0.3rem;
@@ -173,25 +173,25 @@
 
 .editor__meta-fields input::-webkit-input-placeholder,
 .editor__meta-fields textarea::-webkit-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__meta-fields input:-ms-input-placeholder,
 .editor__meta-fields textarea:-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__meta-fields input::-ms-input-placeholder,
 .editor__meta-fields textarea::-ms-input-placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .editor__meta-fields input::placeholder,
 .editor__meta-fields textarea::placeholder {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 

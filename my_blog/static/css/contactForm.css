@@ -10,7 +10,7 @@
 }
 
 .form__fieldwrapper--label {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   margin: 1rem 0 0.5rem;
   color: #41444b;
 }
@@ -18,7 +18,7 @@
 .form__fieldwrapper input {
   padding: 0.5rem;
   outline: none;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   border-radius: 0.1rem;
   border: none;
@@ -36,7 +36,7 @@
   padding: 0.5rem;
   outline: none;
   resize: vertical;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   border-radius: 0.2rem;
   border: none;

@@ -38,12 +38,12 @@
 }
 
 .search-result .post-list .post-wrapper .post--content * {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 
 .search-result .post-list .post-wrapper .post--meta {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.8rem;
   margin: 0.3rem 0;
   color: #851de0;
@@ -51,7 +51,7 @@
 }
 
 .no-result-wrapper .no-result--text {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
   word-wrap: break-word;
 }
@@ -90,7 +90,7 @@
 .pagination * {
   font-size: 0.85rem;
   color: #ff7171;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
 }
 

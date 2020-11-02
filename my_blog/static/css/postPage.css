@@ -1,23 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
-.post__meta--container {
-  padding: 0 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,600&display=swap");
+.post {
+  max-width: 700px;
+  margin: auto;
 }
 
-.post__meta--title {
-  font-family: "Acme", sans-serif;
-  font-size: 2.5rem;
-  color: #1f4068;
-  line-height: 2.5rem;
+.post__meta {
+  margin: 1rem 0;
 }
 
 .post__meta--category, .post__meta--author, .post__meta--publish-dt {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
   font-size: 0.9rem;
+  color: #851de0;
+}
+
+.post__meta--category .name, .post__meta--author .name, .post__meta--publish-dt .name {
+  color: #1f4068;
+  font-weight: 400;
+}
+
+.post--title {
+  font-family: "Lora", serif;
   color: #1f4068;
 }
 
 .post__featured-image {
-  max-width: 700px;
+  width: 100%;
 }
 
 .post__featured-image img {
@@ -30,141 +39,14 @@
   border-bottom: 1px solid #ebecf1;
 }
 
-.post__body--side-container {
-  position: relative;
-}
-
-.post__body--side-container .side-bar-right {
-  width: 80px;
-  margin: auto;
-}
-
-.post__body--side-bar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0rem;
-  padding: 1rem 0;
-}
-
-.post__body--side-bar .card {
-  margin-bottom: 1.5rem;
-  border-radius: 0.3rem;
-  border: 1px solid #ebecf1;
-  position: relative;
-}
-
-.post__body--side-bar .card--title {
-  border-bottom: 1px solid #851de0;
-  padding: 1rem;
-  font-family: "Josefin Sans", sans-serif;
-  color: #851de0;
-}
-
-.post__body--side-bar .card__ad-box--right {
-  border: 1px solid red;
-  max-width: 300px;
-  height: 250px;
-  margin: auto;
-}
-
-.post__body--side-bar .card__ad-box--left {
-  width: 200px;
-  height: 200px;
-  margin: auto;
-}
-
-.post__body--side-bar .card__post {
-  padding: 1rem;
-}
-
-.post__body--side-bar .card__post--list {
-  text-decoration: none;
-  letter-spacing: 0.6px;
-  font-weight: 600;
-  color: #41444b;
-  font-family: "Dosis", sans-serif;
-  margin-left: 0.5rem;
-}
-
-.post__body--side-bar .card__post--container {
-  margin-bottom: 0.8rem;
-}
-
-.post__body--side-bar .card__post--container .thumbnail {
-  width: 60px;
-  border-radius: 0.3rem;
-}
-
-.post__body--side-bar .card__post--container .thumbnail--no-image {
-  min-width: 60px;
-  height: 40px;
-  position: relative;
-  background-color: #ebecf1;
-  border-radius: 0.3rem;
-}
-
-.post__body--side-bar .card__post--container .thumbnail--svg {
-  width: 1rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  fill: #52575d;
-}
-
-.post__body--side-bar .card__post--top {
-  padding: 1rem;
-  width: 100%;
-}
-
-.post__body--side-bar .card__post--top--image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 200px;
-  border-radius: 0.3rem;
-  position: relative;
-  background-color: #ebecf1;
-}
-
-.post__body--side-bar .card__post--top--details {
-  margin-top: 1rem;
-}
-
-.post__body--side-bar .card__post--top--title {
-  font-size: 1.17rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.6px;
-  font-family: "Dosis", sans-serif;
-  color: #0f715d;
-  margin: 0 0 1rem 0;
-}
-
-.post__body--side-bar .card__post--top--body {
-  border-bottom: 1px solid #ebecf1;
-  padding-bottom: 2rem;
-}
-
-.post__body--side-bar .card__post--top--body * {
-  font-family: "Nanum Gothic", sans-serif;
-  font-size: 0.8rem;
-  color: #1f4068;
-}
-
-.post__body--content {
-  padding: 0 1rem;
-}
-
 .post__body--content--body {
   line-height: 1.5;
 }
 
 .post__body--content--body * {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
   width: 100%;
-  height: auto;
 }
 
 .post__body--content--body div {
@@ -240,91 +122,90 @@
   border-collapse: collapse;
 }
 
-.post__comment-list {
+.post .comment-list {
   -webkit-box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
           box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
   border-radius: 0.3rem;
-  padding: 1rem;
+  padding: 0 1rem;
   margin-top: 2rem;
 }
 
-.post__comment-list--count {
+.post .comment-list--count {
   font-family: "Josefin Sans", sans-serif;
   color: #41444b;
   margin: 1rem 0;
 }
 
-.post__comment {
+.post .comment {
   border-left: 4px solid #0f715d;
   border-radius: 0.25rem;
   padding: 1rem;
   margin: 1rem 0;
 }
 
-.post__comment--profile {
+.post .comment--profile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1rem;
 }
 
-.post__comment--profile-pic {
+.post .comment--profile-pic {
   width: 2rem;
   fill: #0f715d;
   margin-right: 0.5rem;
 }
 
-.post__comment--name, .post__comment--body {
-  font-family: "Nanum Gothic", sans-serif;
+.post .comment--name, .post .comment--body {
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.post__comment--name {
+.post .comment--name {
   font-weight: 600;
   color: #0f715d;
 }
 
-.post__comment--alert-notification {
+.post .comment--alert-notification {
   margin-top: 1rem;
   color: #52575d;
 }
 
-.post__comment-form {
+.post .comment-form {
   background-color: #ebecf1;
   border-radius: 0.3rem;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 2rem;
 }
 
-.post__comment-form .login-message {
-  font-family: "Nanum Gothic", sans-serif;
+.post .comment-form .login-message {
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.post__comment-form--title {
-  font-family: "Nanum Gothic", sans-serif;
+.post .comment-form--title {
+  font-family: "Nunito Sans", sans-serif;
   color: #52575d;
-  margin-bottom: 1rem;
 }
 
-.post__comment-form--body label {
+.post .comment-form--body label {
   font-weight: 500;
   margin: 1rem 0;
   color: #52575d;
 }
 
-.post__comment-form--body textarea {
+.post .comment-form--body textarea {
   border: none;
   outline: none;
   resize: vertical;
   border-radius: 0.3rem;
   padding: 1rem;
   font-size: 1rem;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.post__comment-form--reply {
+.post .comment-form--reply {
   background-color: #851de0;
   border-radius: 0.3rem;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   font-size: 0.8rem;
   color: #ebecf1;
   cursor: pointer;
@@ -332,182 +213,20 @@
       align-self: flex-start;
 }
 
-.post__footer-posts {
+.post .related-posts {
   height: 100%;
 }
 
-.post__footer-posts .footer-posts-container {
+.post .related-posts--container {
   margin-top: 1rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.post__footer-posts .footer-posts-heading {
+.post .related-posts--heading {
   font-family: "Josefin Sans", sans-serif;
   padding: 1rem 0.5rem;
   color: #41444b;
-}
-
-.post__change {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 2rem 0 1rem;
-}
-
-.post__change__previous, .post__change__next {
-  background-color: #ebecf1;
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-  width: 48%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.post__change__btn {
-  margin-top: 1rem;
-}
-
-.post__change__btn--next, .post__change__btn--previous {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.post__change__btn--icon--previous, .post__change__btn--icon--next {
-  width: 1rem;
-  fill: #ff7171;
-}
-
-.post__change__btn--icon--previous {
-  margin: 1rem 0.5rem 1rem 0;
-}
-
-.post__change__btn--icon--next {
-  margin: 1rem 0rem 1rem 0.5rem;
-}
-
-.post__change__btn--next {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-.post__change--title--previous, .post__change--title--next {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #851de0;
-  letter-spacing: 0.6px;
-  text-decoration: none;
-  font-family: "Dosis", sans-serif;
-}
-
-.post__change--title--next {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-@media screen and (min-width: 1070px) {
-  .post__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .post__body--content {
-    max-width: 70%;
-  }
-  .post__body--side-container {
-    max-width: 30%;
-  }
-}
-
-@media screen and (min-width: 1171px) {
-  .post__footer-posts .footer-posts-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-@media screen and (max-width: 1170px) and (min-width: 1071px) {
-  .post__footer-posts .footer-posts-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 1071px) {
-  .post__footer-posts {
-    max-width: 75%;
-  }
-  .post__change {
-    max-width: 75%;
-  }
-  .post__comment-form {
-    max-width: 75%;
-  }
-  .post__comment-list {
-    max-width: 75%;
-  }
-}
-
-@media screen and (max-width: 1070px) and (min-width: 900px) {
-  .post__footer-posts .footer-posts-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-@media screen and (max-width: 1070px) {
-  .post__body--side-bar {
-    max-width: 350px;
-    margin: auto;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .post__footer-posts .footer-posts-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .post__change--title--previous, .post__change--title--next {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .post__body--content {
-    padding: 0 0.5rem;
-  }
-  .post__body--content--body ol,
-  .post__body--content--body ul,
-  .post__body--content--body dl {
-    padding: 0 1rem;
-  }
-  .post__comment-form {
-    padding: 2rem 0.5rem;
-  }
 }
 /*# sourceMappingURL=postPage.css.map */

@@ -91,23 +91,7 @@ class PostPageView(View):
             '-publish_date').exclude(title__iexact=post.title)
         related_category_post = Post.objects.filter(
             category__name__iexact=post.category).exclude(title__iexact=post.title)[:3]
-        all_posts = Post.objects.all().order_by('-publish_date')
-
-        nxtPost = None
-        prePost = None
-
-        # if len(all_posts) >= 2:
-        #     for i, p in enumerate(all_posts):
-        #         if p == post:
-        #             if i == 0:
-        #                 nxtPost = all_posts[i + 1]
-        #             elif i == len(all_posts) - 1:
-        #                 prePost = all_posts[i - 1]
-        #             else:
-        #                 nxtPost = all_posts[i + 1]
-        #                 prePost = all_posts[i - 1]
-        #         else:
-        #             print('not found')
+        all_posts = Post.objects.all().order_by('-publish_date')    
 
         '''
         Retrive all the comments from the post
@@ -117,10 +101,6 @@ class PostPageView(View):
 
         context_dict = {
             'post': post,
-            # 'latest_post': latest_posts[1:4],
-            # 'top_post': latest_posts[0],
-            # 'pre_post': prePost,
-            # 'nxt_post': nxtPost,
             'related_category_post': related_category_post,
             'form': CommentForm(),
             'comments': comments

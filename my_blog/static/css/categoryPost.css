@@ -21,7 +21,7 @@
 }
 
 .meta {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   color: #851de0;
@@ -42,7 +42,7 @@
 }
 
 .excerpts * {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: #1f4068;
 }
 
@@ -176,7 +176,7 @@
 .pagination * {
   font-size: 0.85rem;
   color: #ff7171;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
 }
 
