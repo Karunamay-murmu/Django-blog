@@ -14,7 +14,6 @@
                 margin: 1rem 0;
                 color: $text-dark;
                 &--label {
-                    font-family: $large-text;
                     margin: 0.5rem 0;
                     &:nth-child(-n + 3)::after {
                         content: "*";

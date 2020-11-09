@@ -18,13 +18,13 @@ app_name = 'blog'
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),
-    path('blog/category/<slug:slug>',
+    path('category/<slug:slug>',
          CategoryPost.as_view(), name='category'),
-    path('blog/post/<str:id>/<slug:slug>',
+    path('post/<str:id>/<slug:slug>',
          PostPageView.as_view(), name='post_detail'),
-    path('blog/post/<str:id>/<slug:slug>/edit-post',
+    path('post/<str:id>/<slug:slug>/edit-post',
          EditOrSwitchPostToDraft.as_view(), name='edit-post'),
-    path('blog/draft/<str:id>/edit-draft',
+    path('draft/<str:id>/edit-draft',
          EditOrPublishDraft.as_view(), name='edit-or-publish-draft'),
     path('report/', ContactFormView.as_view(), name='report'),
     path('contact/', ContactFormView.as_view(), name='contact'),

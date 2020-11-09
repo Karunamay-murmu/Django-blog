@@ -97,15 +97,6 @@ class Comment(models.Model):
         return self.comment
 
 
-# class Reply(models.Model):
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-#     reply = models.TextField()
-#     create_date = models.DateField(default=timezone.now)
-
-#     def __str__(self):
-#         return self.reply
-
 class Contact(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)

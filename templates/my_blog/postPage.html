@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load social_share %}
 
 {% block head_block %}
 <title>post</title>
@@ -8,12 +9,8 @@
 {% endblock %}
 
 {% block body_block %}
-
 <div class="post flex flex-column">
     <div class="post-container">
-        <aside class="share-options">
-
-        </aside>
         <section class="post-detail">
             <div class="post__information flex flex-column center-align">
                 <div class="post__information">
@@ -23,10 +20,14 @@
                         <p class='post__meta--author'>Author: <span class="name">{{post.author}}</span></p>
                         <p class="post__meta--publish-dt">publish on: <span class="name">{{post.publish_date}} |
                                 {{post.read_time}}
-                                min
                                 read</span></p>
                     </div>
                 </div>
+                <!-- <div class="share-options">
+                    {% post_to_twitter object_or_url %}
+                    {% post_to_facebook object_or_url %}
+                    {% post_to_linkedin object_or_url %}
+                </div> -->
                 <div class="post__featured-image">
                     {% if post.featured_image %}
                     <img src="{{post.featured_image.url}}" alt="image">

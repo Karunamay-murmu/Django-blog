@@ -7,7 +7,7 @@
 }
 
 .profile-edit .form--name {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   color: #41444b;
 }
 
@@ -21,7 +21,6 @@
 }
 
 .profile-edit .form--body .input-box--label {
-  font-family: "Josefin Sans", sans-serif;
   margin: 0.5rem 0;
 }
 

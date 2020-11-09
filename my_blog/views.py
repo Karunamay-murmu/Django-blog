@@ -91,7 +91,7 @@ class PostPageView(View):
             '-publish_date').exclude(title__iexact=post.title)
         related_category_post = Post.objects.filter(
             category__name__iexact=post.category).exclude(title__iexact=post.title)[:3]
-        all_posts = Post.objects.all().order_by('-publish_date')    
+        all_posts = Post.objects.all().order_by('-publish_date')
 
         '''
         Retrive all the comments from the post
@@ -138,7 +138,7 @@ class Home(View):
     def get(self, request, *args, **kwargs):
 
         categories = Categorie.objects.all()
-        latest_post = Post.objects.all().order_by('-publish_date')[:4]
+        posts = Post.objects.all().order_by('-publish_date')
 
         context = {}
         category_list = []
@@ -157,7 +157,7 @@ class Home(View):
             })
 
         context['categories'] = category_list
-        context['latest_post'] = latest_post
+        context['posts'] = posts
 
         return render(request, 'my_blog/home.html', context)
 

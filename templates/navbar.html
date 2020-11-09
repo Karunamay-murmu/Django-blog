@@ -11,15 +11,13 @@
 	<h2><a class="nav-bar__logo" href="{% url 'blog:home' %}">Logo</a></h2>
 	<ul class="nav-bar__menu" id='navigation-menu'>
 		<li class="list"><a class='nav-bar__menu__item link'
-				href="http://127.0.0.1:8000/blog/category/JavaScript">Javascript</a></li>
-		<li class="list"><a class='nav-bar__menu__item link'
-				href="http://127.0.0.1:8000/blog/category/Python">Python</a>
+				href="http://127.0.0.1:8000/category/JavaScript">Javascript</a></li>
+		<li class="list"><a class='nav-bar__menu__item link' href="http://127.0.0.1:8000/category/Python">Python</a>
 		</li>
-		<li class="list"><a class='nav-bar__menu__item link'
-				href="http://127.0.0.1:8000/blog/category/Web-development">Web
+		<li class="list"><a class='nav-bar__menu__item link' href="http://127.0.0.1:8000/category/Web-development">Web
 				development</a></li>
 		<li class="list"><a class='nav-bar__menu__item link'
-				href="http://127.0.0.1:8000/blog/category/Programming">Programming</a></li>
+				href="http://127.0.0.1:8000/category/Programming">Programming</a></li>
 
 		<form action="{% url 'blog:search' %}" class="nav-bar__menu--search-bar flex flex-row" method="GET">
 			<input class="search-bar--input" required type="search" name="query" placeholder="Search posts..."

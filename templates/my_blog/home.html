@@ -33,28 +33,51 @@
 {% endblock %}
 
 {% block alert_block %}
-    {% include 'message.html' with message=message %}
+{% include 'message.html' with message=message %}
 {% endblock %}
 
 {% block body_block %}
 <div class="main">
-    {% if latest_post and categories %}
+    {% if posts and categories %}
     <section class="header">
-        {% if latest_post %}
-        <h1 class="section-title">Latest Post</h1>
+        {% if posts %}
+        <h2 class="section-title">Latest Post</h2>
         <div class="header--latest_post">
-            {% for post in latest_post %}
+            {% for post in posts|slice:":1" %}
             <div class="latest-post">
                 {% if post.featured_image %}
                 <img class="featured_image" src="{{post.featured_image.url}}" alt="">
                 {% else %}
                 <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
                 {% endif %}
-                <section class="latest-post--info-container">
+                <section class="post-information">
+                    <p class="category">{{post.category}}</p>
+                    <h2>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|title}}</a>
+                    </h2>
+                    <div class="excerpt">
+                        {{post.body|safe|truncatewords_html:20}}
+                    </div>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+            {% for post in posts|slice:"1:5" %}
+            <div class="latest-post middle-col">
+                {% if post.featured_image %}
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
+                {% else %}
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                {% endif %}
+                <section class="post-information">
                     <p class="category">{{post.category}}</p>
                     <h3>
                         <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a>
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
                     </h3>
                     <div class="meta">
                         <p class="meta--author">{{post.author}}</p>
@@ -67,45 +90,56 @@
         {% endif %}
     </section>
     <section class="body">
-        {% for category in categories%}
-        {% if category.posts %}
-        <div class="body--container">
-            <h1>
-                <a class="section-title" href="{% url 'blog:category' slug=category.obj.slug %}">
-                    {{category.obj.name}}
-                </a>
-            </h1>
-            <div class="posts-grid">
-                {% for post in category.posts %}
-                <div class="post-container" data-category={{post.category|lower}}>
-                    {% if post.featured_image %}
-                    <img class="featured_image post_image" src="{{post.featured_image.url}}" alt="thumbnail">
-                    {% else %}
-                    <img class="featured_image no_image post_image" src="{% static 'media/no_image.png' %}" alt="">
-                    {% endif %}
-                    <div class="post">
+        <div class="category-latest">
+            <h2 class="section-title">Latest From Category</h2>
+            <div style="margin: 1rem 0;">
+                {% for category in categories %}
+                {% if category.posts %}
+                <h3 class="category-name">{{category.obj.name}}
+                </h3>
+                <div class="category-container">
+                    {% for post in category.posts %}
+                    <a href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}"
+                        class="link category-container--post">
                         <p class="category">{{post.category}}</p>
-                        <h2>
-                            <a class="title post--title"
-                                href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatechars:55}}</a>
-                        </h2>
+                        <h4 class="title">{{post.title|truncatewords_html:10}}</h4>
                         <div class="meta">
                             <p class="meta--author">{{post.author}}</p>
                             <p class="meta--publish_date">{{post.publish_date}}</p>
                         </div>
-                        <article class="post--excerpt">
-                            {{post.body|safe|truncatewords_html:15}}
-                        </article>
-                    </div>
+                    </a href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">
+                    {% endfor %}
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
-            <a class="btn default-link show-btn" href="{% url 'blog:category' slug=category.obj.slug %}">
-                Show more
-            </a>
         </div>
-        {% endif %}
-        {% endfor %}
+        <div class="posts">
+            <h2 class="section-title">All post</h2>
+            {% for post in posts|slice:"5:" %}
+            <div class="post">
+                {% if post.featured_image %}
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
+                {% else %}
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                {% endif %}
+                <section class="post--information">
+                    <p class="category">{{post.category}}</p>
+                    <h2>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                    </h2>
+                    <div class="excerpt">
+                        {{post.body|safe|truncatewords_html:20}}
+                    </div>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+        </div>
     </section>
     {% else %}
     <h3 style="font-family: 'Josefin Sans', sans-serif; color: #41444b;">Post will be added soon...<br>Subscribe us to

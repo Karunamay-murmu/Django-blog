@@ -12,7 +12,7 @@
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
-  color: #851de0;
+  color: #52575d;
 }
 
 .post__meta--category .name, .post__meta--author .name, .post__meta--publish-dt .name {
@@ -22,7 +22,7 @@
 
 .post--title {
   font-family: "Lora", serif;
-  color: #1f4068;
+  color: #41444b;
 }
 
 .post__featured-image {
@@ -31,11 +31,29 @@
 
 .post__featured-image img {
   max-width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
+}
+
+.post .share-options {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.post .share-options .share-icon {
+  width: 1.5rem;
+  fill: #52575d;
+  margin-right: 1rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .post__body {
-  padding: 1.5rem 0 2rem;
+  padding: 1rem 0 2rem;
   border-bottom: 1px solid #ebecf1;
 }
 
@@ -131,7 +149,7 @@
 }
 
 .post .comment-list--count {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   color: #41444b;
   margin: 1rem 0;
 }
@@ -225,7 +243,7 @@
 }
 
 .post .related-posts--heading {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   padding: 1rem 0.5rem;
   color: #41444b;
 }

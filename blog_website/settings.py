@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # 3rd party
     'tinymce',
+    'django_social_share',
 
     # allauth
     'allauth',
@@ -117,7 +118,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'my_blog.context_processors.subscriber_form'
+                'my_blog.context_processors.subscriber_form',
             ],
         },
     },
@@ -207,7 +208,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
- 
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

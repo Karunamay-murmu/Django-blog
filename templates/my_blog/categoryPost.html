@@ -4,6 +4,7 @@
 {% block head_block %}
 <title>{{category_name}}</title>
 <link rel="stylesheet" href="{% static 'css/categoryPost.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% if no_post == True %}
 <style>
     .sub-form {
@@ -34,70 +35,83 @@
 {% block body_block %}
 <div class="posts-wrapper flex flex-column">
     {% if posts %}
-    <section class="featured-posts">
-        <div class="primary-post">
+    <section class="header">
+        {% if posts %}
+        <div class="header--latest_post">
             {% for post in posts|slice:":1" %}
-            {% if post.featured_image %}
-            <img class="primary-post--thumbnail" src="{{post.featured_image.url}}" alt="thumbnail">
-            {% else %}
-            <div class="primary-post--thumbnail--no-image">
-                <svg class="thumbnail-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                        d="M464 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM112 120c-30.928 0-56 25.072-56 56s25.072 56 56 56 56-25.072 56-56-25.072-56-56-56zM64 384h384V272l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L208 320l-55.515-55.515c-4.686-4.686-12.284-4.686-16.971 0L64 336v48z" />
-                </svg>
-            </div>
-            {% endif %}
-            <div class="primary-post--container flex flex-column">
-                <h2><a class="title title--p title--featured"
-                        href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a>
-                </h2>
-                <p class="meta meta--p">{{post.publish_date}} | {{post.category}}</p>
-                <article class="excerpts excerpts--p">
-                    {{post.body|safe|truncatewords_html:20}}
-                </article>
-            </div>
-            {% endfor %}
-        </div>
-        {% for post in posts|slice:"1:4" %}
-        <div class="secondary-post post flex">
-            {% if post.featured_image %}
-            <img class="secondary-post--thumbnail" src="{{post.featured_image.url}}" alt="thumbnail">
-            {% else %}
-
-            <img class="secondary-post--thumbnail" src="{% static 'media/no_image.png' %}" alt="">
-            {% endif %}
-            <div class="secondary-post--details flex flex-column">
-                <h3><a class="title title--s"
-                        href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a></h3>
-                <p class="meta meta--s">{{post.publish_date}} | {{post.category}}</p>
-                <article class="excerpts excerpts--s">
-                    {{post.body|safe|truncatewords_html:15}}
-                </article>
-            </div>
-        </div>
-        {% endfor %}
-    </section>
-    <section class="posts flex">
-        <div class="posts--list">
-            {% for post in posts|slice:"4:" %}
-            <div class="post flex">
+            <div class="latest-post">
                 {% if post.featured_image %}
-                <img class="post--thumbnail" src="{{post.featured_image.url}}" alt="thumbanil">
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
                 {% else %}
-                <img class="post--thumbnail" src="{% static 'media/no_image.png' %}" alt="thumbanil">
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
                 {% endif %}
-                <div class="post--details flex flex-column">
-                    <h2><a class="title post--title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a></h2>
-                    <p class="meta">{{post.publish_date}} | {{post.category}}</p>
-                    <article class="excerpts excerpts--all">
+                <section class="post-information">
+                    <p class="category">{{post.category}}</p>
+                    <h2>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|title}}</a>
+                    </h2>
+                    <div class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}
-                    </article>
-                </div>
+                    </div>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+            {% for post in posts|slice:"1:5" %}
+            <div class="latest-post middle-col">
+                {% if post.featured_image %}
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
+                {% else %}
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                {% endif %}
+                <section class="post-information">
+                    <p class="category">{{post.category}}</p>
+                    <h3>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                    </h3>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
             </div>
             {% endfor %}
         </div>
-        <!-- <aside class="posts--sidebar">
+        {% endif %}
+    </section>
+    <section class="body">
+        <div class="posts">
+            {% for post in posts|slice:"5:" %}
+            <div class="post">
+                {% if post.featured_image %}
+                <img class="featured_image" src="{{post.featured_image.url}}" alt="">
+                {% else %}
+                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                {% endif %}
+                <section class="post--information">
+                    <p class="category">{{post.category}}</p>
+                    <h2>
+                        <a class="title"
+                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                    </h2>
+                    <div class="excerpt">
+                        {{post.body|safe|truncatewords_html:20}}
+                    </div>
+                    <div class="meta">
+                        <p class="meta--author">{{post.author}}</p>
+                        <p class="meta--publish_date">{{post.publish_date}}</p>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- <aside class="posts--sidebar">
             <div class="sidebar-1 sidebar">
                 <h3 class="sidebar--title">Ads by Google</h3>
                 <div class="sidebar--body">
@@ -105,12 +119,11 @@
                 </div>
             </div>
         </aside> -->
-    </section>
     <div class="pagination">
         <span class="step-links">
             {% if posts.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ posts.previous_page_number }}">previous</a>
+            <a style="margin: 0 .5rem;" class="default-link" href="?page=1">&laquo; first</a>
+            <a style="margin: 0 .5rem;" class="default-link" href="?page={{ posts.previous_page_number }}">previous</a>
             {% endif %}
 
             <span class="current">
@@ -118,13 +131,14 @@
             </span>
 
             {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}">next</a>
-            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+            <a style="margin: 0 .5rem;" class="default-link" href="?page={{ posts.next_page_number }}">next</a>
+            <a style="margin: 0 .5rem;" class="default-link" href="?page={{ posts.paginator.num_pages }}">last
+                &raquo;</a>
             {% endif %}
         </span>
     </div>
     {% else %}
-    <h3 style="font-family: 'Josefin Sans', sans-serif; color: #41444b;">Post will be added soon...<br>Subscribe us to
+    <h3 style="font-family: 'Catamaran', sans-serif; color: #41444b;">Post will be added soon...<br>Subscribe us to
         get notified.</h3>
     <form class="sub-form" action="{% url 'blog:subscribe' %}?next={{request.path}}" method="POST">
         {% csrf_token %}

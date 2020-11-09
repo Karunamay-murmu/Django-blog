@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-weight: normal;
   text-decoration: none;
 }
@@ -195,7 +195,7 @@
     height: auto;
   }
   .posts--sidebar .sidebar--title {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Catamaran", sans-serif;
     color: #0f715d;
     margin-bottom: 1rem;
   }
