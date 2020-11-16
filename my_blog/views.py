@@ -191,3 +191,29 @@ class EmailSubscription(View):
 
         else:
             return redirect(request.GET['next'])
+
+
+def handler404(request, exception):
+    error_text = 'The link is broken or the page has been removed.'
+    return render(
+        request,
+        'error.html',
+        {
+            'error_code': '404',
+            'error_text': error_text
+        },
+        status=404
+    )
+
+
+def handler500(request):
+    error_text = 'Something went wrong to the server.'
+    return render(
+        request,
+        'error.html',
+        {
+            'error_code': '500',
+            'error_text': error_text
+        },
+        status=500
+    )

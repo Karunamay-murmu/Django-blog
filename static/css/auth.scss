@@ -1,0 +1,261 @@
+@import "../../../global/css/variable.scss";
+
+.container {
+    position: relative;
+}
+#content {
+    min-height: 100%;
+    background-color: $white-bg;
+    padding: 1.5rem;
+    flex-direction: column;
+}
+.wrapper {
+    .auth-form {
+        background-color: #fff;
+        padding: 2rem 1.5rem;
+        flex-basis: 0;
+        flex-grow: 1;
+
+        &__name {
+            color: $secondary;
+            font-weight: $semi-bold;
+        }
+
+        &__input {
+            position: relative;
+            overflow: hidden;
+            &--fields {
+                margin: 1rem 0 0;
+
+                label {
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    color: rgba($secondary, 0.8);
+
+                    &::after {
+                        content: "*";
+                        color: red;
+                        padding: 0 0 0 5px;
+                    }
+                }
+            }
+            &--wrapper {
+                width: 100%;
+                justify-content: space-between;
+                position: relative;
+                input {
+                    padding: 0.6rem 1.5rem 0.6rem 0;
+                    border: none;
+                    border-bottom: 2px solid rgba($secondary, 0.5);
+                    font-size: 1rem;
+                    font-weight: $semi-bold;
+                    color: $secondary;
+                    outline: none;
+                    font-family: "Rubik", sans-serif;
+                    flex-grow: 1;
+                    padding-right: 1.5rem;
+
+                    &::placeholder {
+                        color: rgba($secondary, 0.5);
+                        font-weight: $semi-bold;
+                    }
+                }
+                svg {
+                    fill: rgba($secondary, 0.5);
+                    position: absolute;
+                    right: 0;
+                    width: 1rem;
+                }
+
+                .input-border {
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #25a98c;
+                    transition: all 0.3s ease;
+                    transform: translateX(-100%);
+                }
+            }
+            .checkbox {
+                margin-top: 0.3rem;
+                #show-password {
+                    border-radius: 0.5rem;
+                    margin-right: 0.3rem;
+                }
+                label {
+                    font-weight: $semi-bold;
+                    font-size: 0.9rem;
+                    color: $secondary;
+                }
+            }
+
+            p {
+                margin-top: 0.3rem;
+            }
+        }
+        &__btn {
+            padding-top: 1.5rem;
+            &--signup,
+            &--login {
+                margin-top: 1rem;
+                color: #206a5d;
+            }
+            &--submit {
+                font-size: 1rem;
+                border-radius: 0.3rem;
+                padding: 1rem !important;
+                color: #ebecf1;
+                background-color: $link !important;
+                cursor: pointer;
+                transition: 200ms;
+
+                &:hover {
+                    box-shadow: 0 8px 10px -5px $secondary;
+                }
+            }
+            &--reset {
+                margin-bottom: 0.3rem;
+                align-self: flex-end;
+            }
+        }
+    }
+    .auth-options {
+        padding: 1rem;
+        background-color: #fff;
+        flex-basis: 0;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: center;
+
+        &--links {
+            a {
+                padding: 0.5rem;
+                transition: 300ms;
+                &:hover {
+                    color: $hover;
+                }
+            }
+        }
+
+        .Oauth-option {
+            margin-top: 1rem;
+            color: $secondary;
+            font-weight: $semi-bold;
+        }
+
+        &__btn {
+            width: 100%;
+            &--google,
+            &--facebook,
+            &--github {
+                padding: 1rem;
+                margin: 0.5rem 0;
+                border-radius: 0.3rem;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                color: #fff;
+                background-color: fff;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 200ms;
+                &:hover {
+                    box-shadow: 0 8px 10px -5px $secondary;
+                }
+                svg {
+                    width: 1.5rem;
+                    fill: #fff;
+                }
+                .btn-label {
+                    margin-left: 1rem;
+                }
+            }
+            &--google {
+                background-color: #4285f4;
+            }
+            &--facebook {
+                background-color: #1877f2;
+            }
+            &--github {
+                background-color: #24292e;
+            }
+        }
+    }
+}
+
+.password-requirment-info-card {
+    position: absolute;
+    top: 59%;
+    left: 62%;
+    background-color: #ebecf1;
+    font-size: 0.9rem;
+    width: 350px;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: #464f54;
+    visibility: hidden;
+    opacity: 0;
+
+    &__criteria-list {
+        list-style: none;
+        padding: 0.5rem 0 0 0;
+        .fa-check {
+            color: white;
+            font-size: 0.9rem;
+            padding-right: 0.4rem;
+        }
+    }
+}
+
+.password-requirment-info-card-animate {
+    opacity: 1;
+    visibility: visible;
+    transition: all 300ms linear;
+}
+@media only screen and (min-width: 668px) {
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .wrapper {
+            flex-direction: row;
+        }
+    }
+    .auth-options,
+    .auth-form {
+        border-top: 5px solid $primary;
+    }
+    .auth-options {
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    .auth-form {
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+    .back-link {
+        position: absolute;
+        top: 1.5rem;
+        left: 2.3rem;
+        border-radius: 0.3rem;
+    }
+}
+
+@media only screen and (max-width: 668px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .auth-options,
+    .auth-form {
+        border-radius: 0.5rem;
+    }
+    .auth-options {
+        margin-top: 1rem;
+    }
+    .back-link {
+        margin-top: 1rem;
+        border-radius: 0.3rem;
+    }
+}
