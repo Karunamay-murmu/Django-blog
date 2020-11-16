@@ -15,8 +15,8 @@
         <div class="post-card__meta flex ">
             <p class="post-card__meta--publish-dt">{{post.publish_date}}</p>
         </div>
-        <h1 class="post-card--title" href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">
-            {{post.title|truncatechars:55}}</h1>
+        <h2 class="post-card--title" href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">
+            {{post.title|truncatechars:55}}</h2>
         <article class="post-card--body">
             {{post.body|safe|truncatewords_html:30}}
         </article>

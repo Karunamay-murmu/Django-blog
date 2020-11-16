@@ -80,7 +80,7 @@
   line-height: 1;
   letter-spacing: 0.6px;
   font-family: "Lora", serif;
-  color: #1f4068;
+  color: #41444b;
 }
 
 .post-card--body {
@@ -103,7 +103,7 @@
   background-color: #851de0;
   border-radius: 0.2rem;
   color: #ebecf1;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
 }
 
 @media screen and (max-width: 610px) {

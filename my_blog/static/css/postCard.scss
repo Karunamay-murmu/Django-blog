@@ -62,7 +62,7 @@
         line-height: 1;
         letter-spacing: 0.6px;
         font-family: $heading;
-        color: $large-title;
+        color: $text-dark;
     }
     &--body {
         margin: 1rem 0;
@@ -80,7 +80,7 @@
             background-color: $purple;
             border-radius: 0.2rem;
             color: $text-light;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1rem;
         }
     }
 }
