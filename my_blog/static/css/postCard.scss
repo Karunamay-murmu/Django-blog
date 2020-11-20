@@ -75,12 +75,12 @@
     &__btn {
         margin: 1rem 0;
         &--read-more {
-            font-size: 0.7rem;
-            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
             background-color: $purple;
             border-radius: 0.2rem;
             color: $text-light;
-            padding: 0.8rem 1rem;
+            padding: 0.6rem 0.8rem;
         }
     }
 }

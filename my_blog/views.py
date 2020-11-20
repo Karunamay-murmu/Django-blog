@@ -84,20 +84,18 @@ class PostPageView(View):
     template_name = 'my_blog/postPage.html'
 
     def get(self, request, *args, **kwargs):
-        _id = kwargs['id']
         slug = kwargs['slug']
         post = get_object_or_404(Post, slug__iexact=slug)
         latest_posts = Post.objects.order_by(
             '-publish_date').exclude(title__iexact=post.title)
         related_category_post = Post.objects.filter(
             category__name__iexact=post.category).exclude(title__iexact=post.title)[:3]
-        all_posts = Post.objects.all().order_by('-publish_date')
 
         '''
         Retrive all the comments from the post
         '''
         comments = Comment.objects.all().filter(
-            post__postId=_id, isApprove=True)
+            post__postId=post.postId, isApprove=True)
 
         context_dict = {
             'post': post,

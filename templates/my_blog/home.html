@@ -3,6 +3,15 @@
 
 {% block head_block %}
 <title>Home</title>
+<meta name="description" content="Home" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<!-- <link rel="canonical" href="https://neilpatel.com/" /> -->
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home" />
+<meta property="og:description" content="Home" />
+<!-- <meta property="og:url" content="https://neilpatel.com/" /> -->
+<meta property="og:site_name" content="Neil Patel" />
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% if not latest_post and categories %}
 <style>
@@ -53,8 +62,7 @@
                 <section class="post-information">
                     <p class="category">{{post.category}}</p>
                     <h2>
-                        <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|title}}</a>
+                        <a class="title" href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|title}}</a>
                     </h2>
                     <div class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}
@@ -77,7 +85,7 @@
                     <p class="category">{{post.category}}</p>
                     <h3>
                         <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                            href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
                     </h3>
                     <div class="meta">
                         <p class="meta--author">{{post.author}}</p>
@@ -99,15 +107,14 @@
                 </h3>
                 <div class="category-container">
                     {% for post in category.posts %}
-                    <a href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}"
-                        class="link category-container--post">
+                    <a href="{% url 'blog:post_detail' slug=post.slug %}" class="link category-container--post">
                         <p class="category">{{post.category}}</p>
                         <h4 class="title">{{post.title|truncatewords_html:10}}</h4>
                         <div class="meta">
                             <p class="meta--author">{{post.author}}</p>
                             <p class="meta--publish_date">{{post.publish_date}}</p>
                         </div>
-                    </a href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">
+                    </a href="{% url 'blog:post_detail' slug=post.slug %}">
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -127,7 +134,7 @@
                     <p class="category">{{post.category}}</p>
                     <h2>
                         <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                            href="{% url 'blog:post_detail'  slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
                     </h2>
                     <div class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}

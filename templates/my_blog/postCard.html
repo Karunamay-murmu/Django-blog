@@ -15,14 +15,14 @@
         <div class="post-card__meta flex ">
             <p class="post-card__meta--publish-dt">{{post.publish_date}}</p>
         </div>
-        <h2 class="post-card--title" href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">
+        <h2 class="post-card--title" href="{% url 'blog:post_detail' slug=post.slug %}">
             {{post.title|truncatechars:55}}</h2>
         <article class="post-card--body">
             {{post.body|safe|truncatewords_html:30}}
         </article>
         <div class="post-card__btn">
-            <a class="default-link btn post-card__btn--read-more"
-                href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">READ MORE</a>
+            <a class="post-card__btn--read-more" href="{% url 'blog:post_detail' slug=post.slug %}">learn
+                more</a>
 
         </div>
     </div>

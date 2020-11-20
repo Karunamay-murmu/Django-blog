@@ -269,4 +269,4 @@ def createPostMeta(post):
 
     if post.meta_description == None:
         text = html2Text(post.body)
-        post.meta_description = text[:160]
+        post.meta_description = text[:160].strip()

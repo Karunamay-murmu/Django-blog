@@ -48,8 +48,7 @@
                 <section class="post-information">
                     <p class="category">{{post.category}}</p>
                     <h2>
-                        <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|title}}</a>
+                        <a class="title" href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|title}}</a>
                     </h2>
                     <div class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}
@@ -72,7 +71,7 @@
                     <p class="category">{{post.category}}</p>
                     <h3>
                         <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                            href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
                     </h3>
                     <div class="meta">
                         <p class="meta--author">{{post.author}}</p>
@@ -97,7 +96,7 @@
                     <p class="category">{{post.category}}</p>
                     <h2>
                         <a class="title"
-                            href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
+                            href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|truncatewords_html:10}}</a>
                     </h2>
                     <div class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}

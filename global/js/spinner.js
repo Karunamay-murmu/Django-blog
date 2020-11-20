@@ -1,6 +1,5 @@
 export class Spinner {
     show() {
-        console.log('load')
         const body = document.querySelector('.body')
         const textarea = document.querySelector('#id_body')
         const container = document.createElement('div')

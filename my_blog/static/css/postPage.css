@@ -140,14 +140,13 @@
   -webkit-box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
           box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
   border-radius: 0.3rem;
-  padding: 0 1rem;
+  padding: 1rem;
   margin-top: 2rem;
 }
 
 .post .comment-list--count {
   font-family: "Catamaran", sans-serif;
   color: #41444b;
-  margin: 1rem 0;
 }
 
 .post .comment {

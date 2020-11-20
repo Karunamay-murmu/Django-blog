@@ -20,7 +20,7 @@ urlpatterns = [
     path('', Home.as_view(), name='home'),
     path('category/<slug:slug>',
          CategoryPost.as_view(), name='category'),
-    path('post/<str:id>/<slug:slug>',
+    path('<slug:slug>',
          PostPageView.as_view(), name='post_detail'),
     path('post/<str:id>/<slug:slug>/edit-post',
          EditOrSwitchPostToDraft.as_view(), name='edit-post'),
