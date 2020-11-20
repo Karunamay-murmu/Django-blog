@@ -3,7 +3,6 @@
 .search-result {
     .page-title {
         font-family: $large-text;
-        margin: 0 0 1rem 0;
         color: $text-dark;
     }
     .post-list {
@@ -72,6 +71,7 @@
             max-width: 550px;
             border-radius: 0.3rem;
             border: 1.8px solid $primary;
+            background-color: #fff;
         }
         &--btn {
             margin: 1rem 0;
@@ -79,6 +79,12 @@
             background-color: $purple;
             color: $text-light;
             border-radius: 0.3rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hover;
+                transition: 150ms;
+            }
         }
     }
 }

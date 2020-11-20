@@ -7,7 +7,6 @@ from my_blog.views import AboutView, handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', AboutView.as_view()),
     path('', include('my_blog.urls')),
     path('user/', include('registration.urls')),
     path('profile/', include('user_profile.urls')),

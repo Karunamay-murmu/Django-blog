@@ -22,8 +22,7 @@
             </div>
             <div class="post__details">
                 <h3 style="line-height: 1.2rem;">
-                    <a class="post--title link"
-                        href="{% url 'blog:post_detail' id=post.postId slug=post.slug %}">{{post.title}}</a>
+                    <a class="post--title link" href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title}}</a>
                 </h3>
                 <p class="post--meta">{{post.publish_date}} | {{post.category}}</p>
                 <article class="post--content">

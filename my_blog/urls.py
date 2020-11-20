@@ -18,6 +18,7 @@ app_name = 'blog'
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),
+    path('search', Search.as_view(), name='search'),
     path('category/<slug:slug>',
          CategoryPost.as_view(), name='category'),
     path('<slug:slug>',
@@ -32,5 +33,4 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('privacy-policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
     path('terms-of-service/', TermsOfServiceView.as_view(), name='terms'),
-    path('search', Search.as_view(), name='search')
 ]
