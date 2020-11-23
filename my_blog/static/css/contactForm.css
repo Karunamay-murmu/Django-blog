@@ -5,7 +5,6 @@
 
 .form__name {
   font-family: "Catamaran", sans-serif;
-  margin: 0 0 1rem 0;
   color: #41444b;
 }
 
@@ -28,8 +27,8 @@
 
 .form__fieldwrapper input:focus {
   border: none;
-  -webkit-box-shadow: 0 0 1px 1px #ff7171;
-          box-shadow: 0 0 1px 1px #ff7171;
+  -webkit-box-shadow: 0 0 1.8px 1.5px #ff7171;
+          box-shadow: 0 0 1.8px 1.5px #ff7171;
 }
 
 .form__fieldwrapper textarea {
@@ -52,7 +51,7 @@
 
 .form__btn {
   margin: 1rem 0;
-  background-color: #851de0;
+  background-color: #851de0 !important;
   padding: 0.8rem 1.5rem;
   border-radius: 0.2rem;
   color: #ebecf1;

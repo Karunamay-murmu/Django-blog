@@ -20,35 +20,40 @@
 {% endblock %}
 
 {% block body_block %}
-<div class="post flex flex-column">
-    <div class="post-container">
-        <section class="post-detail">
-            <div class="post__information flex flex-column">
-                <div class="post__information">
-                    <h1 class="post--title">{{post.title}}</h1>
-                    <div class="post__meta">
-                        <p class="post__meta--category">Category: <span class="name">{{post.category}}</span> </p>
-                        <p class='post__meta--author'>Author: <span class="name">{{post.author}}</span></p>
-                        <p class="post__meta--publish-dt">publish on: <span class="name">{{post.publish_date}} |
-                                {{post.read_time}}
-                                read</span></p>
-                    </div>
-                </div>
-                <div class="post__featured-image">
-                    {% if post.featured_image %}
-                    <img src="{{post.featured_image.url}}" alt="image">
-                    {% endif %}
-                </div>
+<div class="post-header">
+    <div class="post-header-container">
+        <h1 class="article-title">{{post.title|capfirst}}</h1>
+        <div class="post__information">
+            <div class="post__meta flex">
+                <p class="post__meta--category">Category: <span class="name">{{post.category}}</span> </p>
+                <p class='post__meta--author'>Author: <span class="name">{{post.author}}</span></p>
+                <p class="post__meta--publish-dt">Publish on: <span class="name">{{post.publish_date}} |
+                        {{post.read_time}}
+                        read</span></p>
             </div>
-            <div class="post__body">
-                <div class="post__body--content">
-                    <article class="post__body--content--body">
-                        {{post.body|safe}}
-                    </article>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
+    <!-- <img class="title-background" src="{% static 'media/title_background.jpg' %}" alt=""> -->
+</div>
+
+
+<div class="post flex flex-column">
+    <section class="post-detail">
+        <div class="post__featured-image">
+            {% if post.featured_image %}
+            <img src="{{post.featured_image.url}}" alt="image">
+            {% endif %}
+        </div>
+        <div class="post__content">
+            <article class="post__content--body">
+                {{post.body|safe}}
+            </article>
+        </div>
+    </section>
+
+    {% include './comments.html' %}
+    {% include './commentForm.html' %}
+
     {% if related_category_post %}
     <div class="related-posts">
         <h1 class="related-posts--heading">Related Posts</h1>
@@ -59,8 +64,17 @@
         </div>
     </div>
     {% endif %}
-    {% include './comments.html' %}
-    {% include './commentForm.html' %}
+
+</div>
+<div style="padding: .5rem;">
+    <h4 style="font-family: Catamaran, sans-serif; color: #41444b;">
+        Credit for some design of this page</h4>
+    <div class="credit-list flex flex-column">
+        <a class="default-link" href="https://www.freepik.com/vectors/background">Background vector -
+            www.freepik.com</a>
+        <a class="default-link" href="https://www.freepik.com/vectors/background">Background vector -
+            www.freepik.com</a>
+    </div>
 </div>
 
 {% endblock %}

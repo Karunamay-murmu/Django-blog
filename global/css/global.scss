@@ -72,16 +72,10 @@ p {
 .container {
     max-width: 1440px;
     margin: auto;
-    padding: 1rem;
-}
-@media screen and (max-width: 900px) {
-    .container {
-        padding: 0.5rem;
-    }
 }
 .btn {
     padding: 0.7rem;
-    background: $text-light;
+    background-color: $text-light;
     border: none;
     outline: none;
 }

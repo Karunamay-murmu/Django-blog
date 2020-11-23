@@ -18,7 +18,7 @@
         <h2 class="post-card--title" href="{% url 'blog:post_detail' slug=post.slug %}">
             {{post.title|truncatechars:55}}</h2>
         <article class="post-card--body">
-            {{post.body|safe|truncatewords_html:30}}
+            {{post.body|safe|truncatewords_html:15}}
         </article>
         <div class="post-card__btn">
             <a class="post-card__btn--read-more" href="{% url 'blog:post_detail' slug=post.slug %}">learn

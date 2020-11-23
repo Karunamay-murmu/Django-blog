@@ -21,8 +21,6 @@ urlpatterns = [
     path('search', Search.as_view(), name='search'),
     path('category/<slug:slug>',
          CategoryPost.as_view(), name='category'),
-    path('<slug:slug>',
-         PostPageView.as_view(), name='post_detail'),
     path('post/<str:id>/<slug:slug>/edit-post',
          EditOrSwitchPostToDraft.as_view(), name='edit-post'),
     path('draft/<str:id>/edit-draft',
@@ -33,4 +31,6 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('privacy-policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
     path('terms-of-service/', TermsOfServiceView.as_view(), name='terms'),
+    path('<slug:slug>',
+         PostPageView.as_view(), name='post_detail'),
 ]

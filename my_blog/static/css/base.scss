@@ -217,41 +217,22 @@
 }
 
 .footer {
-    margin-top: auto;
+    padding-top: 2rem;
     border-top: 1px solid $white-bg;
-
     &__content {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: auto 80px;
-        grid-template-areas:
-            "about about links links ads ads"
-            "cta cta links links ads ads";
-        grid-gap: 1.5rem;
-    }
-    .bar {
-        grid-area: bar;
-    }
-    .about {
-        grid-area: about;
-    }
-    .cta {
-        grid-area: cta;
-    }
-    .links {
-        grid-area: links;
-    }
-    .ads {
-        grid-area: ads;
+        padding: 0.5rem;
     }
     .section {
+        &__cta {
+            max-width: 420px;
+        }
         &--title {
             color: $primary;
             font-family: $large-text;
         }
         &--body {
             margin-top: 1.5rem;
-            padding-right: 3rem;
+            padding-right: 2rem;
             * {
                 font-size: 0.9rem;
                 font-family: $text;
@@ -273,6 +254,7 @@
                 border-radius: 0.2rem;
                 border: 1px solid $secondary;
                 font-weight: $semi-bold;
+                font-size: 1rem;
             }
             .sub-btn {
                 background-color: $purple;
@@ -281,16 +263,11 @@
                 cursor: pointer;
             }
         }
-        &--ads-area {
-            border: 1px solid gray;
-            border-radius: 0.3rem;
-            max-width: 300px;
-            height: 250px;
-        }
         &--link-list {
-            padding-left: 2rem;
+            padding-left: 1rem;
+            flex-wrap: wrap;
             li {
-                margin: 1rem 0;
+                margin: 1rem 3rem 1rem 0;
                 padding: 0 0 0.8rem 0;
                 border-bottom: 1px solid $text-light;
             }
@@ -313,7 +290,7 @@
         &--text {
             color: $text-light;
             font-size: 0.9rem;
-            padding: 2rem 1rem;
+            padding: 1.5rem;
         }
     }
 }

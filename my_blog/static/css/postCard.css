@@ -79,7 +79,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.6px;
-  font-family: "Lora", serif;
+  font-family: "Catamaran", sans-serif;
   color: #41444b;
 }
 
@@ -99,7 +99,7 @@
 
 .post-card__btn--read-more {
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   background-color: #851de0;
   border-radius: 0.2rem;
   color: #ebecf1;
