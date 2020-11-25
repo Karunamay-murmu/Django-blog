@@ -23,6 +23,20 @@
   padding: 0.5rem;
 }
 
+.post__footer {
+  padding: 2rem 0;
+  border-bottom: 1px solid #ebecf1;
+  border-top: 1px solid #ebecf1;
+}
+
+.post__footer .tag--name {
+  padding: 0.3rem 0.5rem;
+  background-color: #ebecf1;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
+}
+
 .post__meta {
   margin: 1rem 0 0 0;
 }
@@ -36,7 +50,7 @@
 }
 
 .post__meta--category .name, .post__meta--author .name, .post__meta--publish-dt .name {
-  color: #1f4068;
+  color: #7579e7;
   font-weight: 400;
 }
 
@@ -57,12 +71,10 @@
 
 .post__content {
   padding: 1rem 0 2rem;
-  border-bottom: 1px solid #ebecf1;
 }
 
 .post__content--body * {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 1.1rem;
   width: 100%;
 }
 
@@ -110,6 +122,7 @@
 .post__content--body em,
 .post__content--body dt,
 .post__content--body dd {
+  font-size: 1.1rem;
   color: #1f4068;
 }
 
@@ -139,7 +152,12 @@
   border-collapse: collapse;
 }
 
-.post .comment-list {
+.comment-section {
+  max-width: 780px;
+  padding: 0.5rem;
+}
+
+.comment-section .comment-list {
   -webkit-box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
           box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
   border-radius: 0.3rem;
@@ -147,103 +165,104 @@
   margin-top: 2rem;
 }
 
-.post .comment-list--count {
+.comment-section .comment-list--count {
   font-family: "Catamaran", sans-serif;
   color: #41444b;
 }
 
-.post .comment {
+.comment-section .comment {
   border-left: 4px solid #0f715d;
   border-radius: 0.25rem;
   padding: 1rem;
   margin: 1rem 0;
 }
 
-.post .comment--profile {
+.comment-section .comment--profile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1rem;
 }
 
-.post .comment--profile-pic {
+.comment-section .comment--profile-pic {
   width: 2rem;
   fill: #0f715d;
   margin-right: 0.5rem;
 }
 
-.post .comment--name, .post .comment--body {
+.comment-section .comment--name, .comment-section .comment--body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.post .comment--name {
+.comment-section .comment--name {
   font-weight: 600;
   color: #0f715d;
 }
 
-.post .comment--alert-notification {
+.comment-section .comment--alert-notification {
   margin-top: 1rem;
   color: #52575d;
 }
 
-.post .comment-form {
-  background-color: #ebecf1;
+.comment-section .comment-form {
   border-radius: 0.3rem;
-  padding: 1rem;
   margin-top: 2rem;
 }
 
-.post .comment-form .login-message {
+.comment-section .comment-form .login-message {
   font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: #ebecf1;
+  border-radius: 0.3rem;
 }
 
-.post .comment-form--title {
+.comment-section .comment-form--title {
   font-family: "Catamaran", sans-serif;
   color: #52575d;
   margin-bottom: 0.5rem;
 }
 
-.post .comment-form--body label {
+.comment-section .comment-form--body label {
   font-weight: 500;
   margin: 1rem 0;
   color: #52575d;
 }
 
-.post .comment-form--body textarea {
+.comment-section .comment-form--body textarea {
   border: none;
+  -webkit-box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
+          box-shadow: 0 0 0px 1px rgba(82, 87, 93, 0.5);
   outline: none;
   resize: vertical;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   padding: 1rem;
   font-size: 1rem;
   font-family: "Nunito Sans", sans-serif;
 }
 
-.post .comment-form--reply {
-  background-color: #851de0;
-  border-radius: 0.3rem;
+.comment-section .comment-form--reply {
+  background-color: #7579e7;
+  border-radius: 0.2rem;
   margin: 1rem 0 0 0;
   font-size: 0.8rem;
+  font-weight: bold;
   color: #ebecf1;
   cursor: pointer;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  padding: 0.5rem;
+  border: none;
 }
 
-.post .related-posts {
+.related-posts {
   height: 100%;
+  padding: 0.5rem;
 }
 
-.post .related-posts--container {
-  margin-top: 1rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.post .related-posts--heading {
+.related-posts--heading {
+  margin: 1rem 0;
   font-family: "Catamaran", sans-serif;
-  padding: 1rem 0.5rem;
   color: #41444b;
 }
 

@@ -47,7 +47,7 @@
   margin-left: 1rem;
   border-radius: 0.3rem;
   color: #ebecf1;
-  background-color: #851de0;
+  background-color: #7579e7;
   cursor: pointer;
   -webkit-transition: 150ms;
   transition: 150ms;
@@ -66,7 +66,7 @@
 .search-bar--input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #851de0;
+  border: 1px solid #7579e7;
   border-radius: 0.2rem;
   font-size: 0.9rem;
   outline: none;
@@ -81,7 +81,7 @@
   cursor: pointer;
   font-weight: 600;
   color: #ebecf1;
-  background-color: #851de0;
+  background-color: #7579e7;
   -webkit-transition: 150ms;
   transition: 150ms;
 }

@@ -1,68 +1,28 @@
 .post-card {
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  margin-bottom: 1rem;
-  -ms-grid-columns: 40% 60%;
-      grid-template-columns: 40% 60%;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "thumbnail details";
-  border-radius: 0.3rem;
-  -webkit-box-shadow: 0 0 1px 1px rgba(82, 87, 93, 0.5);
-          box-shadow: 0 0 1px 1px rgba(82, 87, 93, 0.5);
-  border-bottom: 0.3rem solid #0f715d;
+  max-width: 240px;
+  margin: 0 1rem 1rem 0;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 1px 1px 5px rgba(82, 87, 93, 0.5);
+          box-shadow: 1px 1px 5px rgba(82, 87, 93, 0.5);
 }
 
 .post-card--thumbnail {
   width: 100%;
-  height: 100%;
+  height: 128px;
   background-color: #ebecf1;
   position: relative;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: thumbnail;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 
 .post-card--svg {
-  width: 4rem;
+  width: 1rem;
+  fill: #52575d;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  fill: #52575d;
-}
-
-.post-card__details {
-  padding: 1rem;
-  position: relative;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: details;
-}
-
-.post-card__meta {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 1rem;
-}
-
-.post-card__meta--publish-dt, .post-card__meta--category {
-  font-size: 1rem;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-.post-card__meta--category {
-  padding: 0.5rem 1rem;
-  background-color: #851de0;
-  color: #ebecf1;
-  border-radius: 1rem;
-  font-weight: 500;
 }
 
 .post-card--image {
@@ -70,8 +30,15 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-right-radius: 0.3rem;
   border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.post-card__details {
+  padding: 1rem 0.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .post-card--title {
@@ -83,38 +50,17 @@
   color: #41444b;
 }
 
-.post-card--body {
-  margin: 1rem 0;
-}
-
-.post-card--body * {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 0.9rem;
-  color: #1f4068;
-}
-
 .post-card__btn {
-  margin: 1rem 0;
+  margin: 2rem 0 0.5rem;
 }
 
 .post-card__btn--read-more {
   text-decoration: none;
   font-size: 0.8rem;
-  background-color: #851de0;
+  font-weight: bold;
+  background-color: #7579e7;
   border-radius: 0.2rem;
   color: #ebecf1;
-  padding: 0.6rem 0.8rem;
-}
-
-@media screen and (max-width: 610px) {
-  .post-card {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 280px 1fr;
-        grid-template-rows: 280px 1fr;
-        grid-template-areas: "thumbnail" "details";
-  }
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=postCard.css.map */

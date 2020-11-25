@@ -1,4 +1,4 @@
-<div class="post-card">
+<div class="post-card flex flex-column">
     {% if post.featured_image %}
     <div class="post-card--thumbnail">
         <img class="post-card--image" src="{{post.featured_image.url}}" alt="thumbnail">
@@ -12,18 +12,11 @@
     </div>
     {% endif %}
     <div class="post-card__details flex-column flex">
-        <div class="post-card__meta flex ">
-            <p class="post-card__meta--publish-dt">{{post.publish_date}}</p>
-        </div>
-        <h2 class="post-card--title" href="{% url 'blog:post_detail' slug=post.slug %}">
-            {{post.title|truncatechars:55}}</h2>
-        <article class="post-card--body">
-            {{post.body|safe|truncatewords_html:15}}
-        </article>
+        <h3 class="post-card--title"><a href="{% url 'blog:post_detail' slug=post.slug %}"></a>
+            {{post.title|truncatechars:40}}</h3>
         <div class="post-card__btn">
-            <a class="post-card__btn--read-more" href="{% url 'blog:post_detail' slug=post.slug %}">learn
-                more</a>
-
+            <a class="post-card__btn--read-more" href="{% url 'blog:post_detail' slug=post.slug %}">Learn
+                More</a>
         </div>
     </div>
 </div>

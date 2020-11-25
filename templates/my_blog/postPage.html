@@ -50,31 +50,28 @@
             </article>
         </div>
     </section>
-
+    <div class="post__footer">
+        {% for tag in post_tags %}
+        <span class="tag--name">
+            {{tag}}
+        </span>
+        {% endfor %}
+    </div>
+</div>
+<div class="comment-section">
     {% include './comments.html' %}
     {% include './commentForm.html' %}
-
-    {% if related_category_post %}
-    <div class="related-posts">
-        <h1 class="related-posts--heading">Related Posts</h1>
-        <div class="related-posts--container">
-            {% for post in related_category_post %}
-            {% include './postCard.html' with post=post %}
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-
 </div>
-<div style="padding: .5rem;">
-    <h4 style="font-family: Catamaran, sans-serif; color: #41444b;">
-        Credit for some design of this page</h4>
-    <div class="credit-list flex flex-column">
-        <a class="default-link" href="https://www.freepik.com/vectors/background">Background vector -
-            www.freepik.com</a>
-        <a class="default-link" href="https://www.freepik.com/vectors/background">Background vector -
-            www.freepik.com</a>
+
+{% if related_category_post %}
+<div class="related-posts">
+    <h1 class="related-posts--heading">Related Posts</h1>
+    <div class="related-posts--container flex flex-row wrap">
+        {% for post in related_category_post %}
+        {% include './postCard.html' with post=post %}
+        {% endfor %}
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

@@ -255,8 +255,9 @@
 }
 
 .footer .section--email-input .sub-btn {
-  background-color: #851de0;
+  background-color: #7579e7;
   color: #ebecf1;
+  font-weight: bold;
   border-radius: 0.2rem;
   cursor: pointer;
 }

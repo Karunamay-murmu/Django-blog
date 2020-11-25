@@ -3,7 +3,6 @@
 
 .post-header-container {
     padding: 10rem 2rem;
-    // background-color: $hover;
     .article-title {
         font-family: $large-text;
         font-size: 2.5rem;
@@ -20,6 +19,21 @@
     max-width: 788px;
     margin: auto;
     padding: 0.5rem;
+    &__footer {
+        padding: 2rem 0;
+        border-bottom: 1px solid $text-light;
+        border-top: 1px solid $text-light;
+
+        .tag {
+            &--name {
+                padding: 0.3rem 0.5rem;
+                background-color: $white-bg;
+                font-size: 1rem;
+                border-radius: 0.3rem;
+                margin-right: 0.5rem;
+            }
+        }
+    }
     &__meta {
         margin: 1rem 0 0 0;
         &--category,
@@ -31,7 +45,7 @@
             color: $secondary;
             margin-right: 1rem;
             .name {
-                color: $paragraph;
+                color: $purple;
                 font-weight: 400;
             }
         }
@@ -47,16 +61,13 @@
         width: 100%;
         img {
             max-width: 100%;
-            // margin-top: 0.8rem;
         }
     }
     &__content {
         padding: 1rem 0 2rem;
-        border-bottom: 1px solid $text-light;
         &--body {
             * {
                 font-family: $text;
-                font-size: 1.1rem;
                 width: 100%;
             }
             div {
@@ -100,6 +111,7 @@
             em,
             dt,
             dd {
+                font-size: 1.1rem;
                 color: $paragraph;
             }
             p > img {
@@ -126,6 +138,10 @@
             }
         }
     }
+}
+.comment-section {
+    max-width: 780px;
+    padding: 0.5rem;
 
     .comment-list {
         box-shadow: 0 0 0px 1px rgba($secondary, 0.5);
@@ -165,13 +181,17 @@
         }
     }
     .comment-form {
-        background-color: $white-bg;
         border-radius: 0.3rem;
-        padding: 1rem;
         margin-top: 2rem;
+
         .login-message {
             font-family: $text;
+            font-size: 1.1rem;
+            padding: 1rem;
+            background-color: $white-bg;
+            border-radius: 0.3rem;
         }
+
         &--title {
             font-family: $large-text;
             color: $secondary;
@@ -185,9 +205,10 @@
             }
             textarea {
                 border: none;
+                box-shadow: 0 0 0px 1px rgba($secondary, 0.5);
                 outline: none;
                 resize: vertical;
-                border-radius: 0.3rem;
+                border-radius: 0.2rem;
                 padding: 1rem;
                 font-size: 1rem;
                 font-family: $text;
@@ -195,25 +216,25 @@
         }
         &--reply {
             background-color: $purple;
-            border-radius: 0.3rem;
+            border-radius: 0.2rem;
             margin: 1rem 0 0 0;
             font-size: 0.8rem;
+            font-weight: bold;
             color: $text-light;
             cursor: pointer;
             align-self: flex-start;
+            padding: 0.5rem;
+            border: none;
         }
     }
-    .related-posts {
-        height: 100%;
-        &--container {
-            margin-top: 1rem;
-            justify-content: space-between;
-        }
-        &--heading {
-            font-family: $large-text;
-            padding: 1rem 0.5rem;
-            color: $text-dark;
-        }
+}
+.related-posts {
+    height: 100%;
+    padding: 0.5rem;
+    &--heading {
+        margin: 1rem 0;
+        font-family: $large-text;
+        color: $text-dark;
     }
 }
 

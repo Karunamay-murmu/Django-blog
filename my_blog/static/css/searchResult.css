@@ -45,7 +45,7 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.8rem;
   margin: 0.3rem 0;
-  color: #851de0;
+  color: #7579e7;
   font-weight: 600;
 }
 
@@ -78,7 +78,7 @@
 .no-result-wrapper .search-bar--btn {
   margin: 1rem 0;
   width: 80px;
-  background-color: #851de0;
+  background-color: #7579e7;
   color: #ebecf1;
   border-radius: 0.3rem;
   cursor: pointer;

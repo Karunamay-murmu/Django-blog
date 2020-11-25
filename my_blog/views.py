@@ -96,8 +96,10 @@ class PostPageView(View):
         '''
         comments = Comment.objects.all().filter(
             post__postId=post.postId, isApprove=True)
+        tags = post.tags.split(",")
 
         context_dict = {
+            'post_tags': tags,
             'post': post,
             'related_category_post': related_category_post,
             'form': CommentForm(),
