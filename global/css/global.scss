@@ -79,23 +79,20 @@ p {
     border: none;
     outline: none;
 }
-.alert-error {
+.error {
     font-size: 0.8rem;
     color: $error;
     background-color: #f2dede;
-    border: 1px solid $error;
 }
-.alert-info {
+.info {
     font-size: 0.8rem;
     color: $info;
     background-color: #d9edf7;
-    border: 1px solid $info;
 }
-.alert-success {
+.success {
     font-size: 0.8rem;
     color: $success;
     background-color: #dff0d8;
-    border: 1px solid $success;
 }
 .errorlist {
     color: $error;

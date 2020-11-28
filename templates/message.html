@@ -3,7 +3,7 @@
 <div id="alert-box">
     <script defer src="{% static 'js/closeAlert.js' %}"></script>
     {% for message in messages %}
-    <div class="notification-container alert-info" role="alert">
+    <div class="notification-container {{message.tags}}" role="alert">
         <div class="flex center-align" style="justify-content: space-between;">
             <span>{{message}}</span>
             <svg id='close-alert-icon' class="close-alert-icon" xmlns="http://www.w3.org/2000/svg"

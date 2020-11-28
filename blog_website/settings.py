@@ -25,16 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    # local
     'my_blog',
     'write_blog',
     'user_profile',
 
-    # 3rd party
     'tinymce',
     'django_social_share',
-
-    # allauth
+    'captcha',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

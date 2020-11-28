@@ -8,17 +8,17 @@ from .validator import PasswordValidation
 
 class Signup(forms.ModelForm):
     password1 = forms.CharField(
-        label='Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': '*********', 'class': 'input'}))
+        label='Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'input'}))
     password2 = forms.CharField(
-        label='Confirm Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': '*********', 'class': 'input'}))
+        label='Confirm Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': 'ConfirmPassword', 'class': 'input'}))
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Jhon02', 'autocomplete': 'off', 'class': 'input'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Example@email.com', 'autocomplete': 'off', 'class': 'input'})
+            'username': forms.TextInput(attrs={'placeholder': "Username(Jhon02)", 'autocomplete': 'off', 'class': 'input'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Email(Example@email.com)', 'autocomplete': 'off', 'class': 'input'})
         }
 
     def clean_username(self):

@@ -2,79 +2,79 @@
 {% load static %}
 
 {% block dashboard_right_block_head %}
-    <title>Post</title>
-    <link rel="stylesheet" href="{% static 'css/itemList.css' %}">
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-    <script type="module" defer src="{% static 'js/modal.js' %}"></script>
+<title>Post</title>
+<link rel="stylesheet" href="{% static 'css/itemList.css' %}">
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+<script type="module" defer src="{% static 'js/modal.js' %}"></script>
 {% endblock %}
 
 {% block alert_block %}
-    {% include 'message.html' with message=message %}
+{% include 'message.html' with message=message %}
 {% endblock %}
 
 {% block dashboard_right_block %}
-    {% if posts %}
-        {% for post in posts %}
-            <div class="card">
-                <div class="card__text">
-                    <h3 class="card__text--title">{{post.title}}</h3>
-                    <p class="card__text--meta">Category: <span>{{post.category}}</span> </p>
-                    <p class="card__text--meta">Tags:
-                        {% if post.tags %}
-                        <span>{{post.tags}}</span>
-                        {% else %}
-                        <span></span>
-                        {% endif %}
-                    </p>
-                </div>
-                <div class="card__btn">
-                    <a class="link card__btn--view" href="">View</a>
-                    <a class="link card__btn--edit" href="{% url 'blog:edit-post' slug=post.slug id=post.postId %}">Edit</a>
-                    <button class="card__btn--delete delete" type="text" name="delete" data-extra="{{post.title}}"
-                        value="{{post.postId}}">Delete</button>
-                </div>
-            </div>
-        {% endfor %}
-        <div class="modal-container" id="modal-container">
-            <form method="POST" action="" class="modal">
-                {% csrf_token %}
-                <div class="modal__header flex center-align">
-                    <svg class="fas fa-trash-alt modal__header--delete-icon" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <path
-                            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" />
-                    </svg>
-                    <p class="modal__header--text">Delete the post?</p>
-                    <svg class="fas fa-times modal__header--close-icon close" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 352 512">
-                        <path
-                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
-                    </svg>
-                </div>
-                <p class="modal__body">Are you sure you want to delete the post with Title: <br> <span
-                        id="spanPostTitle"></span>
-                </p>
-                <hr>
-                <div class="modal__btn">
-                    <button class="btn modal__btn--confirm" id="confirm-delete" type="submit" name="id"
-                        value={{post.postId}}>Delete</button>
-                </div>
-            </form>
+{% if posts %}
+{% for post in posts %}
+<div class="card">
+    <div class="card__text">
+        <h3 class="card__text--title">{{post.title}}</h3>
+        <p class="card__text--meta">Category: <span>{{post.category}}</span> </p>
+        <p class="card__text--meta">Tags:
+            {% if post.tags %}
+            <span>{{post.tags}}</span>
+            {% else %}
+            <span></span>
+            {% endif %}
+        </p>
+    </div>
+    <div class="card__btn">
+        <a class="link card__btn--view" href="{% url 'blog:post_detail' slug=post.slug %}">View</a>
+        <a class="link card__btn--edit" href="{% url 'blog:edit-post' slug=post.slug id=post.postId %}">Edit</a>
+        <button class="card__btn--delete delete" type="text" name="delete" data-extra="{{post.title}}"
+            value="{{post.postId}}">Delete</button>
+    </div>
+</div>
+{% endfor %}
+<div class="modal-container" id="modal-container">
+    <form method="POST" action="" class="modal">
+        {% csrf_token %}
+        <div class="modal__header flex center-align">
+            <svg class="fas fa-trash-alt modal__header--delete-icon" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path
+                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" />
+            </svg>
+            <p class="modal__header--text">Delete the post?</p>
+            <svg class="fas fa-times modal__header--close-icon close" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 352 512">
+                <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+            </svg>
         </div>
-    {% else %}
-        <div class="no-content">
-            <div class="wrapper">
-                <p class="info">No post</p>
-                <a href="{% url 'dashboard:write_blog:write_post' user=user.username id=user.userId %}">
-                    <svg class="write-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path
-                            d="M400 480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zM238.1 177.9L102.4 313.6l-6.3 57.1c-.8 7.6 5.6 14.1 13.3 13.3l57.1-6.3L302.2 242c2.3-2.3 2.3-6.1 0-8.5L246.7 178c-2.5-2.4-6.3-2.4-8.6-.1zM345 165.1L314.9 135c-9.4-9.4-24.6-9.4-33.9 0l-23.1 23.1c-2.3 2.3-2.3 6.1 0 8.5l55.5 55.5c2.3 2.3 6.1 2.3 8.5 0L345 199c9.3-9.3 9.3-24.5 0-33.9z" />
-                    </svg>
-                </a>
-                <p class="info">Click <a style="font-size: 1.2rem;" class="default-link"
-                        href="{% url 'dashboard:write_blog:write_post' user=user.username id=user.userId %}">here</a> to create
-                    new post. Or click the pencil icon.</p>
-            </div>
+        <p class="modal__body">Are you sure you want to delete the post with Title: <br> <span
+                id="spanPostTitle"></span>
+        </p>
+        <hr>
+        <div class="modal__btn">
+            <button class="btn modal__btn--confirm" id="confirm-delete" type="submit" name="id"
+                value={{post.postId}}>Delete</button>
         </div>
-    {% endif %}
+    </form>
+</div>
+{% else %}
+<div class="no-content">
+    <div class="wrapper">
+        <p class="info">No post</p>
+        <a href="{% url 'dashboard:write_blog:write_post' user=user.username id=user.userId %}">
+            <svg class="write-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M400 480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zM238.1 177.9L102.4 313.6l-6.3 57.1c-.8 7.6 5.6 14.1 13.3 13.3l57.1-6.3L302.2 242c2.3-2.3 2.3-6.1 0-8.5L246.7 178c-2.5-2.4-6.3-2.4-8.6-.1zM345 165.1L314.9 135c-9.4-9.4-24.6-9.4-33.9 0l-23.1 23.1c-2.3 2.3-2.3 6.1 0 8.5l55.5 55.5c2.3 2.3 6.1 2.3 8.5 0L345 199c9.3-9.3 9.3-24.5 0-33.9z" />
+            </svg>
+        </a>
+        <p class="info">Click <a style="font-size: 1.2rem;" class="default-link"
+                href="{% url 'dashboard:write_blog:write_post' user=user.username id=user.userId %}">here</a> to create
+            new post. Or click the pencil icon.</p>
+    </div>
+</div>
+{% endif %}
 {% endblock %}

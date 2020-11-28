@@ -116,25 +116,22 @@ p {
   outline: none;
 }
 
-.alert-error {
+.error {
   font-size: 0.8rem;
   color: #d11a2a;
   background-color: #f2dede;
-  border: 1px solid #d11a2a;
 }
 
-.alert-info {
+.info {
   font-size: 0.8rem;
   color: #31708f;
   background-color: #d9edf7;
-  border: 1px solid #31708f;
 }
 
-.alert-success {
+.success {
   font-size: 0.8rem;
   color: #597151;
   background-color: #dff0d8;
-  border: 1px solid #597151;
 }
 
 .errorlist {
