@@ -5,12 +5,11 @@ from django.contrib.auth import authenticate
 from .models import User
 from .validator import PasswordValidation
 
-
 class Signup(forms.ModelForm):
     password1 = forms.CharField(
         label='Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'input'}))
     password2 = forms.CharField(
-        label='Confirm Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': 'ConfirmPassword', 'class': 'input'}))
+        label='Confirm Password', required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'input'}))
 
     class Meta:
         model = User

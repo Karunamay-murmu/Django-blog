@@ -10,6 +10,7 @@
     <title>Signup</title>
     <link rel="stylesheet" href="{% static 'css/auth.css' %}" />
     <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- <script defer src="{% static 'js/auth.js' %}"></script> -->
 </head>
 
@@ -51,21 +52,21 @@
                         <div class="auth-form__input--fields">
                             {{form.username}}
                         </div>
+                        {% if form.errors %}
                         <div class="errors">
-                            {% if form.errors %}
                             {{form.errors.username}}
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                     <div class="auth-form__input">
                         <div class="auth-form__input--fields">
                             {{form.email}}
                         </div>
+                        {% if form.errors %}
                         <div class="errors">
-                            {% if form.errors %}
                             {{form.errors.email}}
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                     <div class="auth-form__input">
                         <div class="auth-form__input--fields">
@@ -73,30 +74,39 @@
                         </div>
                         <p class="auth-form--message">Password should be more than 8 character long.
                             Including lower, upper and special characters</p>
+                        {% if form.errors %}
                         <div class="errors">
-                            {% if form.errors %}
                             {{form.errors.password1}}
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                     <div class="auth-form__input">
                         <div class="auth-form__input--fields">
                             {{form.password2}}
                         </div>
+                        {% if form.errors %}
                         <div class="errors">
-                            {% if form.errors %}
                             {{form.errors.password2}}
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
-
+                    <div class="auth-form__input">
+                        <div class="auth-form__input--fields g-recaptcha"
+                            data-sitekey="6Lca6PAZAAAAAK1r9e_s5zDt6cf4JOe6GvgjOdbO">
+                        </div>
+                        {% if form.non_field_errors %}
+                        <div class="errors">
+                            {{form.non_field_errors}}
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="auth-form__btn flex-column flex">
                     <button class="auth-form__btn--submit btn" type="submit" name="sign_up">
                         SIGN UP
                     </button>
-                    <p class="auth-form--message">already have an account?<a class="default-link"
-                            href="{% url 'registration:log_in' %}">login</a>
+                    <p class="auth-form--message">Already have an account?<a style="margin-left: .2rem;"
+                            class="default-link" href="{% url 'registration:log_in' %}">Login</a>
                     </p>
                     <a class="default-link" href="{% url 'blog:home' %}">Go back
                         to

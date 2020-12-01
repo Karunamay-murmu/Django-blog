@@ -1,4 +1,6 @@
 import uuid
+import requests
+import json
 
 from django.shortcuts import render
 from django.urls import reverse
@@ -16,6 +18,8 @@ from django.shortcuts import redirect
 from .forms import Signup, Login
 from .models import User
 
+from .validate_captcha import validate_captcha
+
 
 class User_signup(FormView):
     form_class = Signup
@@ -28,16 +32,22 @@ class User_signup(FormView):
 
             return HttpResponseRedirect(reverse('blog:home'))
 
-        return super().dispatch(request)
+        return super(User_signup, self).dispatch(request)
 
     def form_valid(self, form):
         user = form.save(commit=False)
-        user.save()
+        valid_captcha = validate_captcha(self.request)
 
+        if valid_captcha == False:
+            form.add_error(None, 'Captcha invalid or empty')
+
+            return self.form_invalid(form)
+
+        user.save()
         messages.success(
             self.request, 'Account created successfully. Please Login!', extra_tags='success')
 
-        return super().form_valid(form)
+        return super(User_signup, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('registration:log_in')

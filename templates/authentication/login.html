@@ -83,9 +83,9 @@
                     {% else %}
                     <button class="auth-form__btn--submit btn" type="submit" name="login">LOGIN</button>
                     {% endif %}
-                    <p class="auth-form__btn--signup message-info">don't have an account?<a class="default-link"
-                            href="{% url 'registration:sign_up' %}">
-                            SIGNUP</a></p>
+                    <p class="auth-form--message">Don't have an account?<a style="margin-left: .2rem;"
+                            class="default-link" href="{% url 'registration:sign_up' %}">
+                            Signup</a></p>
                     <a class="default-link" href="{% url 'blog:home' %}">Go back
                         to
                         website</a>
