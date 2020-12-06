@@ -1,7 +1,7 @@
 <div class="footer__content container">
     <section class="footer__items--cta section cta">
         <div class="section__cta">
-            <h3 class="section--title">Subscribe our newlatter for the lattest update</h3>
+            <h3 class="section--title">Subscribe our newsletter for the latest update</h3>
             <div class="section--body--cta">
                 <form class="section--email-input flex" action="{% url 'blog:subscribe' %}?next={{request.path}}"
                     method="POST">
@@ -26,8 +26,8 @@
                             Policy</a></li>
                     <li class="list"><a class="default-link page-link" href="{% url 'blog:terms' %}">Terms of
                             Service</a></li>
-                    <li class="list"><a class="default-link page-link" href="{% url 'blog:report' %}">Report an
-                            issue</a></li>
+                    <li class="list"><a class="default-link page-link" href="{% url 'blog:report' %}">Report An
+                            Issue</a></li>
                 </ul>
             </div>
         </div>

@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head_block %}
     {% endblock %}
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    <script defer src="{% static 'js/blog.js' %}"></script>
+    <link rel="preload" as="style" href="{% static 'css/base.css' %}" onload="this.rel='stylesheet'">
+    <link rel="preload" as="style" href="{% static 'css/global.css' %}" onload="this.rel='stylesheet'">
+    <link rel="preload" as='font' type="font" crossorigin
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap">
+    <link rel="preload" as='font' type="font" crossorigin
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap">
+    <link rel="preload" as='font' type="font" crossorigin
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap">
 </head>
 
 <body>
@@ -38,6 +43,7 @@
     {% endblock %}
     {% block script_block %}
     {% endblock %}
+    <script async defer src="{% static 'js/blog.js' %}"></script>
 </body>
 
 </html>

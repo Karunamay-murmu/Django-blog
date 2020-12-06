@@ -8,10 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="{% static 'css/auth.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/auth.css' %}" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/global.css' %}" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- <script defer src="{% static 'js/auth.js' %}"></script> -->
 </head>
 
 <body>
@@ -49,6 +48,9 @@
                 {% csrf_token %}
                 <div class="auth-form__input-items">
                     <div class="auth-form__input">
+                        <label class="auth-form__input--label" for={{form.username.id_for_label}}>
+                            {{form.username.label}}
+                        </label>
                         <div class="auth-form__input--fields">
                             {{form.username}}
                         </div>
@@ -59,6 +61,9 @@
                         {% endif %}
                     </div>
                     <div class="auth-form__input">
+                        <label class="auth-form__input--label" for={{form.email.id_for_label}}>
+                            {{form.email.label}}
+                        </label>
                         <div class="auth-form__input--fields">
                             {{form.email}}
                         </div>
@@ -69,11 +74,14 @@
                         {% endif %}
                     </div>
                     <div class="auth-form__input">
+                        <label class="auth-form__input--label" for={{form.password1.id_for_label}}>
+                            {{form.password1.label}}
+                        </label>
                         <div class="auth-form__input--fields">
                             {{form.password1}}
                         </div>
                         <p class="auth-form--message">Password should be more than 8 character long.
-                            Including lower, upper and special characters</p>
+                            Including lower, upper and special characters.</p>
                         {% if form.errors %}
                         <div class="errors">
                             {{form.errors.password1}}
@@ -81,6 +89,9 @@
                         {% endif %}
                     </div>
                     <div class="auth-form__input">
+                        <label class="auth-form__input--label" for={{form.password2.id_for_label}}>
+                            {{form.password2.label}}
+                        </label>
                         <div class="auth-form__input--fields">
                             {{form.password2}}
                         </div>

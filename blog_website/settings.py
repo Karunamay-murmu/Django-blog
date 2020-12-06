@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_extensions',
+    'django_webp',
+    'image_optimizer',
 
 
     # allauth providers
@@ -115,6 +117,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_webp.context_processors.webp',
                 'my_blog.context_processors.subscriber_form',
             ],
         },
@@ -199,8 +202,8 @@ STATICFILES_DIRS = [
 ]
 
 
-MEDIA_URL = '/mediafiles/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_URL = '/user/login'
@@ -213,3 +216,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'shygamer.com@gmail.com'
 EMAIL_HOST_PASSWORD = 'Karan123@@##$$'
+
+OPTIMIZED_IMAGE_METHOD = 'pillow'

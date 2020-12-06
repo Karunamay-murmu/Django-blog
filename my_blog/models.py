@@ -1,9 +1,14 @@
 import uuid
+from io import BytesIO
+from PIL import Image
 
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.core.files import File
+
+from image_optimizer.fields import OptimizedImageField
 
 from tinymce.models import HTMLField
 from registration.models import User
@@ -26,8 +31,13 @@ class PostInfo(models.Model):
         Categorie, on_delete=models.CASCADE, default=None)
     tags = models.CharField(max_length=256, default=None)
     body = HTMLField()
-    featured_image = models.ImageField(
-        upload_to='media', blank=True, null=True)
+    featured_image = OptimizedImageField(
+        upload_to="featured_image",
+        optimized_image_output_size=(788, 450),
+        optimized_image_resize_method='cover',
+        blank=True,
+        null=True
+    )
     meta_title = models.CharField(max_length=60, null=True, blank=True)
     slug = models.SlugField(max_length=75, unique=True, null=True, blank=True)
     meta_description = models.CharField(max_length=160, null=True, blank=True)

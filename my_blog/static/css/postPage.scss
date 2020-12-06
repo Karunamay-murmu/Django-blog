@@ -1,5 +1,4 @@
 @import "../../../global/css/variable.scss";
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,600&display=swap");
 
 .post-header-container {
     padding: 10rem 2rem;
@@ -51,16 +50,12 @@
         }
     }
 
-    &--title {
-        font-family: $large-text;
-        color: $text-dark;
-        line-height: 1.1;
-        background-color: red;
-    }
     &__featured-image {
         width: 100%;
         img {
             max-width: 100%;
+            height: auto;
+            object-fit: cover;
         }
     }
     &__content {
@@ -112,7 +107,7 @@
             dt,
             dd {
                 font-size: 1.1rem;
-                color: $paragraph;
+                color: $text-dark;
             }
             p > img {
                 max-width: 100%;

@@ -1,6 +1,4 @@
 #content {
-  height: 100%;
-  background-color: rgba(235, 236, 241, 0.5);
   padding: 1.5rem 0.5rem;
 }
 
@@ -16,13 +14,13 @@
 
 .wrapper .email-signup {
   text-align: center;
-  margin: 1rem 0 0.5rem;
+  margin: 0 0 1rem;
 }
 
 .wrapper .email-signup--message {
   font-size: 0.9rem;
   font-weight: 700;
-  color: rgba(82, 87, 93, 0.5);
+  color: #52575d;
 }
 
 .wrapper .auth-form {
@@ -45,20 +43,30 @@
 .wrapper .auth-form__name {
   color: #0f715d;
   font-family: "Catamaran", sans-serif;
-  margin: 0 0 1rem 0;
   text-align: center;
 }
 
 .wrapper .auth-form__input {
   position: relative;
   overflow: hidden;
-}
-
-.wrapper .auth-form__input--fields {
   margin: 1rem 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.wrapper .auth-form__input input {
+.wrapper .auth-form__input--label {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0 0 0.2rem 0;
+  font-weight: 500;
+  color: #0f715d;
+}
+
+.wrapper .auth-form__input--fields input {
   width: 100%;
   padding: 1rem;
   border-radius: 0.3rem;
@@ -74,47 +82,28 @@
   padding-right: 1.5rem;
 }
 
-.wrapper .auth-form__input input::-webkit-input-placeholder {
+.wrapper .auth-form__input--fields input::-webkit-input-placeholder {
   color: rgba(82, 87, 93, 0.5);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.wrapper .auth-form__input input:-ms-input-placeholder {
+.wrapper .auth-form__input--fields input:-ms-input-placeholder {
   color: rgba(82, 87, 93, 0.5);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.wrapper .auth-form__input input::-ms-input-placeholder {
+.wrapper .auth-form__input--fields input::-ms-input-placeholder {
   color: rgba(82, 87, 93, 0.5);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.wrapper .auth-form__input input::placeholder {
+.wrapper .auth-form__input--fields input::placeholder {
   color: rgba(82, 87, 93, 0.5);
   font-size: 0.9rem;
   font-weight: 600;
-}
-
-.wrapper .auth-form__input svg {
-  fill: rgba(82, 87, 93, 0.5);
-  position: absolute;
-  right: 0;
-  width: 1rem;
-}
-
-.wrapper .auth-form__input .input-border {
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  background-color: #25a98c;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
 }
 
 .wrapper .auth-form__btn {
@@ -221,7 +210,7 @@
 
 @media only screen and (max-width: 375px) {
   .wrapper {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 }
 /*# sourceMappingURL=auth.css.map */

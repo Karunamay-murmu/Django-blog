@@ -1,6 +1,11 @@
+.search-result {
+  padding: 0.5rem;
+}
+
 .search-result .page-title {
   font-family: "Catamaran", sans-serif;
   color: #41444b;
+  line-height: 1;
 }
 
 .search-result .post-list {
@@ -10,7 +15,7 @@
 
 .search-result .post-list .post-wrapper {
   max-width: 100%;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem;
@@ -32,7 +37,8 @@
 }
 
 .search-result .post-list .post-wrapper .post--title {
-  font-family: "Lora", serif;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 500;
   color: #41444b;
 }
 
@@ -56,7 +62,7 @@
 }
 
 .no-result-wrapper .no-result--query {
-  font-family: "Lora", serif;
+  font-family: "Catamaran", sans-serif;
   font-weight: 600;
   font-size: 2rem;
 }

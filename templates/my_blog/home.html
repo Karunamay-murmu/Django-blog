@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load webp %}
 
 {% block head_block %}
 <title>Home</title>
@@ -12,7 +13,8 @@
 <meta property="og:description" content="Home" />
 <!-- <meta property="og:url" content="https://neilpatel.com/" /> -->
 <meta property="og:site_name" content="Neil Patel" />
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="preload" as="style" href="{% static 'css/home.css' %}" onload="this.rel='stylesheet'">
+
 {% if not latest_post and categories %}
 <style>
     .sub-form {
@@ -50,14 +52,13 @@
     {% if posts and categories %}
     <section class="header">
         {% if posts %}
-        <h2 class="section-title">Latest Post</h2>
         <div class="header--latest_post">
             {% for post in posts|slice:":1" %}
             <div class="latest-post">
                 {% if post.featured_image %}
                 <img class="featured_image" src="{{post.featured_image.url}}" alt="">
                 {% else %}
-                <img class="featured_image no_image" src="{% static 'media/no_image.png' %}" alt="">
+                <img class="featured_image no_image" src="{% webp 'media/no_image.png' %}" alt="">
                 {% endif %}
                 <section class="post-information">
                     <p class="category">{{post.category}}</p>

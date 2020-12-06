@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="localhost" />
 <meta property="article:published_time" content="{{post.publish_date}}" />
 <meta property="article:modified_time" content="{{post.update_date}}" />
-<link rel="stylesheet" href="{% static 'css/postPage.css' %}">
-<link rel="stylesheet" href="{% static 'css/postCard.css' %}">
+<link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/postPage.css' %}">
+<link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/postCard.css' %}">
 {% endblock %}
 
 {% block body_block %}
-<div class="post-header">
+<header class="post-header">
     <div class="post-header-container">
         <h1 class="article-title">{{post.title|capfirst}}</h1>
         <div class="post__information">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <!-- <img class="title-background" src="{% static 'media/title_background.jpg' %}" alt=""> -->
-</div>
+</header>
 
 
 <div class="post flex flex-column">
