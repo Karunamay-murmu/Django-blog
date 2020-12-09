@@ -23,13 +23,27 @@
         border-bottom: 1px solid $text-light;
         border-top: 1px solid $text-light;
 
-        .tag {
-            &--name {
-                padding: 0.3rem 0.5rem;
-                background-color: $white-bg;
-                font-size: 1rem;
-                border-radius: 0.3rem;
-                margin-right: 0.5rem;
+        &--tag {
+            padding: 0.3rem 0.5rem;
+            background-color: $white-bg;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            margin-right: 0.5rem;
+        }
+
+        &--like {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+
+            &--icon {
+                margin-left: 0.8rem;
+                width: 1.8rem;
+                fill: $border;
+                cursor: pointer;
+            }
+
+            &--count {
+                margin-left: 0.2rem;
             }
         }
     }
@@ -113,7 +127,8 @@
                 max-width: 100%;
                 height: auto;
             }
-            a {
+            a,
+            a > * {
                 text-decoration: none;
                 color: $link;
                 font-weight: 700;

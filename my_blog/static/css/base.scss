@@ -3,7 +3,9 @@
 #header {
     background-color: $primary;
     .nav-bar {
-        margin: auto;
+        position: relative;
+        width: 100%;
+        height: 60px;
         padding: 0.5rem 1rem;
         &__menu-icon {
             &--burger,
@@ -39,6 +41,15 @@
 
             .auth {
                 &__profile {
+                    padding: 0.3rem 0.5rem 0.3rem 1rem;
+                    border-radius: 0.2rem;
+                    transition: 300ms;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $hover;
+                    }
+
                     &--username {
                         margin-right: 0.5rem;
                         color: $text-light;
@@ -47,8 +58,39 @@
                         font-weight: $bold;
                     }
                     &--icon {
-                        width: 1rem;
+                        width: 2rem;
                         fill: $text-light;
+                    }
+                }
+
+                &__options {
+                    position: absolute;
+                    top: 70px;
+                    right: 1rem;
+                    width: 200px;
+                    border: none;
+                    display: none;
+                    background-color: #fff;
+
+                    &__list {
+                        box-shadow: 0 0 5px rgba($secondary, 0.5);
+                        &--item {
+                            .default-link {
+                                display: block;
+                                padding: 1rem 3rem 1rem 1rem;
+                                font-weight: $bold;
+                                color: $text-dark;
+
+                                &:hover {
+                                    background-color: $hover;
+                                    color: $text-light;
+                                }
+
+                                &:not(:nth-child(5)) {
+                                    border-bottom: 0.5px solid $white-bg;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -111,8 +153,9 @@
     transform: 150ms;
 }
 
-.showCross {
+.display {
     display: initial !important;
+    transition: 250ms;
 }
 
 @media screen and (min-width: 978px) {

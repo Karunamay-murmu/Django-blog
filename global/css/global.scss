@@ -14,22 +14,22 @@ body {
     font-family: $text;
 }
 h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 h3 {
-    font-size: 1.17rem;
+    font-size: 1.17rem !important;
 }
 h4 {
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
 h5 {
-    font-size: 0.83rem;
+    font-size: 0.83rem !important;
 }
 h6 {
-    font-size: 0.67rem;
+    font-size: 0.67rem !important;
 }
 p {
     font-size: 1rem;
@@ -61,7 +61,6 @@ p {
 }
 .link {
     text-decoration: none;
-    color: $link;
 }
 .default-link {
     text-decoration: none;

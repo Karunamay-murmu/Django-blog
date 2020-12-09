@@ -28,12 +28,28 @@
   border-top: 1px solid #ebecf1;
 }
 
-.post__footer .tag--name {
+.post__footer--tag {
   padding: 0.3rem 0.5rem;
   background-color: #ebecf1;
   font-size: 1rem;
   border-radius: 0.3rem;
   margin-right: 0.5rem;
+}
+
+.post__footer--like {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.post__footer--like--icon {
+  margin-left: 0.8rem;
+  width: 1.8rem;
+  fill: #ff7171;
+  cursor: pointer;
+}
+
+.post__footer--like--count {
+  margin-left: 0.2rem;
 }
 
 .post__meta {
@@ -126,7 +142,8 @@
   height: auto;
 }
 
-.post__content--body a {
+.post__content--body a,
+.post__content--body a > * {
   text-decoration: none;
   color: #ff7171;
   font-weight: 700;
