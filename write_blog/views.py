@@ -1,7 +1,6 @@
 import re
 import unidecode
 
-# Thirdparty packages
 from bs4 import BeautifulSoup
 
 from django.shortcuts import render, redirect, get_object_or_404
@@ -18,8 +17,6 @@ from django.contrib import messages
 from registration.models import User
 from my_blog.models import Tag, Post, Draft
 from .forms import postForm
-
-# Create your views here.
 
 
 class CreatePost(LoginRequiredMixin, CreateView):

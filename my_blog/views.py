@@ -1,9 +1,10 @@
 import uuid
+import json
 
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
@@ -86,17 +87,11 @@ class PostPageView(View):
     def get(self, request, *args, **kwargs):
         slug = kwargs['slug']
         post = get_object_or_404(Post, slug__iexact=slug)
-        latest_posts = Post.objects.order_by(
-            '-publish_date').exclude(title__iexact=post.title)
         related_category_post = Post.objects.filter(
             category__name__iexact=post.category).exclude(title__iexact=post.title)[:3]
-
-        '''
-        Retrive all the comments from the post
-        '''
+        tags = post.tags.split(",")
         comments = Comment.objects.all().filter(
             post__postId=post.postId, isApprove=True)
-        tags = post.tags.split(",")
 
         context_dict = {
             'post_tags': tags,
@@ -109,29 +104,32 @@ class PostPageView(View):
         return render(request, self.template_name, context_dict)
 
     def post(self, request, *args, **kwargs):
-        '''
-        Create Comments
-        '''
         slug = kwargs['slug']
-
         post = get_object_or_404(Post, slug__iexact=slug)
-        form_class = CommentForm
+        form = CommentForm(request.POST or None)
 
-        if request.method == "POST":
-            form = form_class(request.POST or None)
-            if form.is_valid():
+        if form.is_valid():
 
-                comment = form.save(commit=False)
-                comment.post = post
-                comment.user = request.user
-                comment.save()
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.user = request.user
+            comment.save()
 
-                messages.info(
-                    request, 'Your comment is awaiting moderation', extra_tags='info')
+            messages.info(
+                request, 'Your comment is awaiting moderation', extra_tags='info')
 
-                return redirect(request.path)
+            return redirect(request.path)
 
-            return render(request, self.template_name, {'form': form})
+        if request.body:
+            data = json.loads(request.body.decode("utf-8"))
+            post = Post.objects.get(postId=data['postid'])
+            post.liked += 1
+
+            post.save()
+
+            return JsonResponse({'likes': post.liked})
+
+        return self.get(request, *args, **kwargs)
 
 
 class Home(View):
@@ -187,10 +185,8 @@ class EmailSubscription(View):
         if email:
             subs = Subscriber(subscriber_email=email)
             subs.save()
-            return redirect(request.GET['next'])
 
-        else:
-            return redirect(request.GET['next'])
+        return redirect(request.GET['next'])
 
 
 def handler404(request, exception):
@@ -217,3 +213,7 @@ def handler500(request):
         },
         status=500
     )
+
+
+class CountLikeOnPost():
+    pass

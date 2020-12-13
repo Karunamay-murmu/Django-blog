@@ -9,7 +9,7 @@ from .views import (
     AboutView,
     PrivacyPolicyView,
     TermsOfServiceView,
-    Search
+    Search,
 )
 from .models import Post, Categorie, Comment
 from write_blog.views import EditOrPublishDraft, EditOrSwitchPostToDraft

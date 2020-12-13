@@ -51,6 +51,7 @@ class Post(PostInfo):
     publish_date = models.DateField(blank=True, null=True)
     update_date = models.DateField(blank=True, null=True)
     read_time = models.CharField(max_length=10, default="3 min")
+    liked = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -62,6 +63,9 @@ class Post(PostInfo):
     def update(self):
         self.update_date = timezone.now()
         self.save()
+
+    def totalLikes(self):
+        return self.liked
 
 
 class Draft(PostInfo):
