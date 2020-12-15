@@ -19,6 +19,13 @@
     fill: $primary !important;
     transition: 200ms;
 }
+
+.share-icon {
+    width: 2rem;
+    fill: $secondary;
+    margin: 0 0.25rem;
+}
+
 .post {
     max-width: 788px;
     margin: auto;
@@ -36,10 +43,14 @@
             margin-right: 0.5rem;
         }
 
-        &__like {
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
+        &__options {
+            justify-content: space-between;
+            color: $primary;
+            font-weight: $bold;
+            font-size: 1rem;
+        }
 
+        &__like {
             &--button {
                 background: transparent;
                 border: none;
@@ -56,6 +67,11 @@
 
             &--count {
                 margin-left: 0.5rem;
+            }
+        }
+        &__share {
+            &--links {
+                margin-top: 0.5rem;
             }
         }
     }
@@ -78,10 +94,11 @@
 
     &__featured-image {
         width: 100%;
-        img {
+        &--image {
             max-width: 100%;
             height: auto;
             object-fit: cover;
+            border-radius: 0.5rem;
         }
     }
     &__content {
@@ -104,7 +121,9 @@
             h4,
             h5,
             h6 {
-                color: $primary;
+                * {
+                    color: $primary !important;
+                }
             }
             p,
             div,
@@ -138,6 +157,7 @@
             p > img {
                 max-width: 100%;
                 height: auto;
+                border-radius: 0.3rem;
             }
             a,
             a > * {
@@ -263,6 +283,9 @@
 @media only screen and (max-width: 650px) {
     .post__meta {
         flex-direction: column;
+    }
+    .post__footer__options {
+        margin-top: 1rem;
     }
 }
 
