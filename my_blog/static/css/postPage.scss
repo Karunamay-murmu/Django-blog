@@ -22,8 +22,14 @@
 
 .share-icon {
     width: 2rem;
-    fill: $secondary;
+    fill: rgba($secondary, .8);
     margin: 0 0.25rem;
+    transition: 180ms;
+
+    &:hover {
+        fill: rgba($secondary, 1)
+    }
+
 }
 
 .post {

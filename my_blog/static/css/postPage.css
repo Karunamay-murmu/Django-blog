@@ -24,8 +24,14 @@
 
 .share-icon {
   width: 2rem;
-  fill: #52575d;
+  fill: rgba(82, 87, 93, 0.8);
   margin: 0 0.25rem;
+  -webkit-transition: 180ms;
+  transition: 180ms;
+}
+
+.share-icon:hover {
+  fill: #52575d;
 }
 
 .post {

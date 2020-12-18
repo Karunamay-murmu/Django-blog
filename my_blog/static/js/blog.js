@@ -19,8 +19,8 @@ function toggleProfileOptions() {
     const optionCard = profileIcon.nextElementSibling;
     let optionCardVisible = false
 
-    profileIcon.onclick = function (e) {
-        optionCard.classList.toggle('display');
+    profileIcon.onmouseenter = function (e) {
+        optionCard.classList.add('display');
         optionCardVisible = true;
 
         if (optionCardVisible) {

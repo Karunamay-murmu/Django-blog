@@ -78,6 +78,7 @@
 #header .nav-bar__auth .auth__options__list {
   -webkit-box-shadow: 0 0 5px rgba(82, 87, 93, 0.5);
           box-shadow: 0 0 5px rgba(82, 87, 93, 0.5);
+  border-radius: 0.5rem;
 }
 
 #header .nav-bar__auth .auth__options__list--item .default-link {
@@ -88,8 +89,12 @@
 }
 
 #header .nav-bar__auth .auth__options__list--item .default-link:hover {
-  background-color: #27907d;
-  color: #ebecf1;
+  color: #ff7171;
+}
+
+#header .nav-bar__auth .auth__options__list--item .default-link:hover:nth-child(1) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 #header .nav-bar__auth .auth__options__list--item .default-link:not(:nth-child(5)) {

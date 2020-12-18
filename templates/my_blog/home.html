@@ -150,7 +150,7 @@
         </div>
     </section>
     {% else %}
-    <h3 style="font-family: 'Josefin Sans', sans-serif; color: #41444b;">Post will be added soon...<br>Subscribe us to
+    <h3 style="font-family: 'Josefin Sans', sans-serif; color: #41444b;">Post will be publish soon...<br>Subscribe us to
         get notified.</h3>
     <form class="sub-form" action="{% url 'blog:subscribe' %}?next={{request.path}}" method="POST">
         {% csrf_token %}
