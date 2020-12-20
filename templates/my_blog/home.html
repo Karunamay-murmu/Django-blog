@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Neil Patel" />
 <link rel="preload" as="style" href="{% static 'css/home.css' %}" onload="this.rel='stylesheet'">
 
-{% if not latest_post and categories %}
+{% if not has_data %}
 <style>
     .sub-form {
         max-width: 450px;
@@ -49,7 +49,7 @@
 
 {% block body_block %}
 <div class="main">
-    {% if posts and categories %}
+    {% if has_data %}
     <section class="header">
         {% if posts %}
         <div class="header--latest_post">

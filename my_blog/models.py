@@ -23,13 +23,13 @@ class Categorie(models.Model):
 
 
 class PostInfo(models.Model):
-    title = models.CharField(max_length=256, unique=True, default=None)
+    title = models.CharField(max_length=255, unique=True, default=None)
     postId = models.UUIDField(
         primary_key=True, default=uuid.uuid1, editable=False)
-    authorId = models.CharField(max_length=256, default=None, editable=False)
+    authorId = models.CharField(max_length=255, default=None, editable=False)
     category = models.ForeignKey(
         Categorie, on_delete=models.CASCADE, default=None)
-    tags = models.CharField(max_length=256, default=None)
+    tags = models.CharField(max_length=255, default=None)
     body = HTMLField()
     featured_image = OptimizedImageField(
         upload_to="featured_image",
