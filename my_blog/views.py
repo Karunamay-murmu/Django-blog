@@ -158,7 +158,7 @@ class Home(View):
         context['posts'] = posts
         context['has_data'] = True
 
-        if not posts and not categories:
+        if not posts:
             context['has_data'] = False
 
         return render(request, 'my_blog/home.html', context)

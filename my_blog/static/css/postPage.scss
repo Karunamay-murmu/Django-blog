@@ -2,6 +2,7 @@
 
 .post-header-container {
     padding: 10rem 2rem;
+
     .article-title {
         font-family: $large-text;
         font-size: 2.5rem;
@@ -10,6 +11,7 @@
         max-width: 700px;
     }
 }
+
 .title-background {
     max-width: 100%;
     object-fit: cover;
@@ -36,6 +38,7 @@
     max-width: 788px;
     margin: auto;
     padding: 0.5rem;
+
     &__footer {
         padding: 2rem 0;
         border-bottom: 1px solid $text-light;
@@ -75,14 +78,17 @@
                 margin-left: 0.5rem;
             }
         }
+
         &__share {
             &--links {
                 margin-top: 0.5rem;
             }
         }
     }
+
     &__meta {
         margin: 1rem 0 0 0;
+
         &--category,
         &--author,
         &--publish-dt {
@@ -91,6 +97,7 @@
             font-size: 0.9rem;
             color: $secondary;
             margin-right: 1rem;
+
             .name {
                 color: $purple;
                 font-weight: 400;
@@ -100,6 +107,7 @@
 
     &__featured-image {
         width: 100%;
+
         &--image {
             max-width: 100%;
             height: auto;
@@ -107,13 +115,16 @@
             border-radius: 0.5rem;
         }
     }
+
     &__content {
         padding: 1rem 0 2rem;
+
         &--body {
             * {
                 font-family: $text;
                 width: 100%;
             }
+
             div {
                 width: 100%;
             }
@@ -121,16 +132,17 @@
             iframe {
                 max-width: 100%;
             }
+
             h1,
             h2,
             h3,
             h4,
             h5,
             h6 {
-                * {
-                    color: $primary !important;
-                }
+                color: $primary !important;
+                font-family: $large-text;
             }
+
             p,
             div,
             table,
@@ -151,6 +163,7 @@
             dl {
                 padding: 0 4rem;
             }
+
             p,
             li,
             strong,
@@ -160,17 +173,20 @@
                 font-size: 1.1rem;
                 color: $text-dark;
             }
-            p > img {
+
+            p>img {
                 max-width: 100%;
                 height: auto;
                 border-radius: 0.3rem;
             }
+
             a,
-            a > * {
+            a>* {
                 text-decoration: none;
                 color: $link;
                 font-weight: 700;
             }
+
             table {
                 border-collapse: collapse;
                 padding: 0 4rem;
@@ -181,12 +197,14 @@
                 border: 1px solid #ccc;
                 padding: 0.4rem;
             }
+
             table {
                 border-collapse: collapse;
             }
         }
     }
 }
+
 .comment-section {
     max-width: 780px;
     padding: 0.5rem;
@@ -196,38 +214,46 @@
         border-radius: 0.3rem;
         padding: 1rem;
         margin-top: 2rem;
+
         &--count {
             font-family: $large-text;
             color: $text-dark;
         }
     }
+
     .comment {
         border-left: 4px solid $primary;
         border-radius: 0.25rem;
         padding: 1rem;
         margin: 1rem 0;
+
         &--profile {
             align-items: center;
             margin-bottom: 1rem;
         }
+
         &--profile-pic {
             width: 2rem;
             fill: $primary;
             margin-right: 0.5rem;
         }
+
         &--name,
         &--body {
             font-family: $text;
         }
+
         &--name {
             font-weight: $bold;
             color: $primary;
         }
+
         &--alert-notification {
             margin-top: 1rem;
             color: $secondary;
         }
     }
+
     .comment-form {
         border-radius: 0.3rem;
         margin-top: 2rem;
@@ -245,12 +271,14 @@
             color: $secondary;
             margin-bottom: 0.5rem;
         }
+
         &--body {
             label {
                 font-weight: 500;
                 margin: 1rem 0;
                 color: $secondary;
             }
+
             textarea {
                 border: none;
                 box-shadow: 0 0 0px 1px rgba($secondary, 0.5);
@@ -262,6 +290,7 @@
                 font-family: $text;
             }
         }
+
         &--reply {
             background-color: $purple;
             border-radius: 0.2rem;
@@ -276,9 +305,11 @@
         }
     }
 }
+
 .related-posts {
     height: 100%;
     padding: 0.5rem;
+
     &--heading {
         margin: 1rem 0;
         font-family: $large-text;
@@ -290,6 +321,7 @@
     .post__meta {
         flex-direction: column;
     }
+
     .post__footer__options {
         margin-top: 1rem;
     }
@@ -306,6 +338,7 @@
         .article-title {
             font-size: 2rem;
         }
+
         .post__meta {
             flex-direction: column;
         }

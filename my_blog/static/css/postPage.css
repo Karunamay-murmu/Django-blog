@@ -131,13 +131,14 @@
   max-width: 100%;
 }
 
-.post__content--body h1 *,
-.post__content--body h2 *,
-.post__content--body h3 *,
-.post__content--body h4 *,
-.post__content--body h5 *,
-.post__content--body h6 * {
+.post__content--body h1,
+.post__content--body h2,
+.post__content--body h3,
+.post__content--body h4,
+.post__content--body h5,
+.post__content--body h6 {
   color: #0f715d !important;
+  font-family: "Catamaran", sans-serif;
 }
 
 .post__content--body p,

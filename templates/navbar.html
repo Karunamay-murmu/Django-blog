@@ -60,7 +60,11 @@
 					<li class="auth__options__list--item list"><a class="default-link"
 							href="{% url 'dashboard:comments' user=user id=user.userId %}">Comments</a></li>
 					<li class="auth__options__list--item list"><a class="default-link"
+							href="{% url 'dashboard:write_blog:write_post' user=user id=user.userId %}">Write Post</a>
+					</li>
+					<li class="auth__options__list--item list"><a class="default-link"
 							href="{% url 'registration:log_out' %}">Log out</a></li>
+
 				</ul>
 			</div>
 			{% else %}
