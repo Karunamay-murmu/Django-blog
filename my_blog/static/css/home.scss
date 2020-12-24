@@ -11,55 +11,68 @@ h3 {
     z-index: -1;
     border-radius: 0.3rem;
 }
+
 .no_image {
     filter: brightness(90%);
 }
+
 .category {
     font-weight: $bold;
     color: $background;
     margin-bottom: 0.5rem;
 }
+
 .category,
 .meta--author,
 .meta--publish_date {
     font-size: 0.8rem;
 }
+
 .title,
 .meta {
     color: $text-dark;
 }
+
 .title {
     text-decoration: none;
     text-transform: capitalize;
     line-height: 1.2rem;
 }
+
 .meta {
     display: flex;
     margin-top: 0.3rem;
+
     &--author,
     &--publish_date {
         margin-right: 0.5rem;
         color: $secondary;
     }
 }
+
 .section-title {
     font-family: $large-text;
     color: $text-dark;
     text-transform: uppercase;
 }
+
 .excerpt {
-    margin: 1rem 0;
+    margin: .5rem 0 1rem;
 }
+
 .middle-col {
     display: flex;
+
     .post-information {
         margin-right: 0.5rem;
         height: 135px;
     }
 }
+
 .main {
     padding: 0.5rem;
 }
+
 .header {
     &--latest_post {
         margin: 1rem 0;
@@ -88,26 +101,33 @@ h3 {
 
             &:nth-child(1) {
                 grid-area: f1;
+
                 .featured_image {
                     width: 100%;
                     height: 290px;
                 }
+
                 .post-information {
                     height: 265px;
+
                     .title {
                         color: $text-dark;
                     }
                 }
             }
+
             &:nth-child(2) {
                 grid-area: f2;
             }
+
             &:nth-child(3) {
                 grid-area: f3;
             }
+
             &:nth-child(4) {
                 grid-area: f4;
             }
+
             &:nth-child(5) {
                 grid-area: f5;
             }
@@ -117,17 +137,21 @@ h3 {
 
 .category-latest {
     margin: 2rem 0;
+
     .category-name {
         color: $secondary;
     }
+
     .category-container {
         margin: 1rem 0;
         display: grid;
         grid-gap: 1rem;
+
         &--post {
             padding: 1rem;
             box-shadow: 0 0 2px 0px $secondary;
             border-radius: 0.3rem;
+
             &:hover {
                 background-color: $white-bg;
                 transition: 150ms;
@@ -138,6 +162,7 @@ h3 {
 
 .post {
     padding: 2rem 0;
+
     &--information {
         padding: 1rem;
     }
@@ -196,14 +221,17 @@ h3 {
         grid-template-columns: 35% 1fr;
     }
 }
+
 @media only screen and (max-width: 525px) {
     .category-container {
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: repeat(1, 1fr);
+
         &--post {
             padding: 0.5rem !important;
         }
     }
+
     .post {
         border-bottom: 1px solid $secondary;
     }
@@ -212,12 +240,14 @@ h3 {
 @media only screen and (min-width: 320px) {
     .middle-col {
         flex-direction: row-reverse;
+
         .featured_image {
             width: 30%;
             height: auto;
         }
     }
 }
+
 @media only screen and (max-width: 320px) {
     .header {
         &--latest_post {
@@ -231,8 +261,10 @@ h3 {
                 "f5";
         }
     }
+
     .middle-col {
         flex-direction: column;
+
         .featured_image {
             width: 100%;
             height: 180px;

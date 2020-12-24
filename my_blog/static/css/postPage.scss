@@ -121,7 +121,6 @@
 
         &--body {
             * {
-                font-family: $text;
                 width: 100%;
             }
 
@@ -131,6 +130,15 @@
 
             iframe {
                 max-width: 100%;
+            }
+
+            pre {
+                border-radius: .3rem;
+
+                * {
+                    font-family: "consolas";
+
+                }
             }
 
             h1,

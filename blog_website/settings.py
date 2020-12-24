@@ -229,3 +229,28 @@ EMAIL_HOST_USER = 'shygamer.com@gmail.com'
 EMAIL_HOST_PASSWORD = 'Karan123@@##$$'
 
 OPTIMIZED_IMAGE_METHOD = 'pillow'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'height': 550,
+    'custom_undo_redo_levels': 20,
+    'selector': '#id_body',
+    'theme': 'silver',
+    'plugins': '''
+            link image imagetools codesample
+            table code lists nonbreaking visualblocks
+            visualchars code autolink lists charmap print hr
+            anchor pagebreak
+            ''',
+    'toolbar': '''
+            styleselect | bold italic underline | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image | codesample | code | pagebreak
+            ''',
+    'menubar': False,
+    'images_upload_url': MEDIA_URL + 'uploads/',
+    'images_file_types': 'jpg,svg,webp',
+    'automatic_uploads': True,
+    'image_width': '778'
+    # 'skin': 'custom'
+}

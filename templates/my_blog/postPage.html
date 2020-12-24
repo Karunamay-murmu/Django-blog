@@ -21,10 +21,16 @@
     const path = "{{request.path}}";
     const postId = "{{post.postId}}"
 </script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="{% static 'js/prism.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
 {% endblock %}
 
 {% block body_block %}
-
 <header class="post-header">
     <div class="post-header-container">
         <h1 class="article-title">{{post.title|capfirst}}</h1>

@@ -1,22 +1,45 @@
 import re
 import unidecode
+import os
 
 from bs4 import BeautifulSoup
+from PIL import Image
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt, requires_csrf_token
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
-from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.http import HttpResponseRedirect, HttpResponseForbidden, JsonResponse, HttpResponse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
 from django.contrib import messages
+from django.conf import settings
+from django.core.files import File
+from django.core.files.storage import FileSystemStorage
 
 from registration.models import User
 from my_blog.models import Tag, Post, Draft
 from .forms import postForm
+
+
+@requires_csrf_token
+def image_upload(request):
+    image_file = request.FILES['file']
+
+    fs = FileSystemStorage(location=os.path.join(
+        settings.MEDIA_ROOT, 'uploads'))
+    image_save = fs.save(image_file.name, image_file)
+    image_path = fs.path(image_save)
+
+    image = Image.open(image_path)
+    resize_image = image.resize((778, 519))
+    resize_image.save(image_path, quality=50, optimize=True)
+
+    image_location = settings.MEDIA_URL + 'uploads/' + image_file.name
+    return JsonResponse({'location': image_location})
 
 
 class CreatePost(LoginRequiredMixin, CreateView):

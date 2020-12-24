@@ -119,7 +119,6 @@
 }
 
 .post__content--body * {
-  font-family: "Nunito Sans", sans-serif;
   width: 100%;
 }
 
@@ -129,6 +128,14 @@
 
 .post__content--body iframe {
   max-width: 100%;
+}
+
+.post__content--body pre {
+  border-radius: .3rem;
+}
+
+.post__content--body pre * {
+  font-family: "consolas";
 }
 
 .post__content--body h1,
