@@ -74,6 +74,7 @@ class CategoryPost(TemplateView):
         posts = post_per_page.get_page(page_number)
 
         context['category_name'] = category_name
+        context['active'] = 'active'
 
         if posts:
             context['posts'] = posts
@@ -191,6 +192,9 @@ class EmailSubscription(View):
         if email:
             subs = Subscriber(subscriber_email=email)
             subs.save()
+
+            messages.info(
+                self.request, "Thank you for subscribe our newsletter", extra_tags='success')
 
         return redirect(request.GET['next'])
 

@@ -2,6 +2,12 @@
   background-color: #0f715d;
 }
 
+#header .active {
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #27907d;
+}
+
 #header .nav-bar {
   position: relative;
   width: 100%;

@@ -13,10 +13,12 @@ urlpatterns = [
     path('profile/', include('user_profile.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('accounts/', include('allauth.urls')),
-    path('media/uploads/', csrf_exempt(image_upload)),
+    path('media/images/uploads/', csrf_exempt(image_upload)),
     path('', include('my_blog.urls')),
+]
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = handler404
 handler500 = handler500

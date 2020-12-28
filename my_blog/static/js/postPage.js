@@ -19,7 +19,6 @@ function incrementLikeOnPost() {
             postid
         }
         try {
-            console.log('start');
             fetch(url, {
                 method: "POST",
                 headers: {
@@ -39,8 +38,8 @@ function incrementLikeOnPost() {
         }
     }
 
-    likeButton.addEventListener("click", like)
-    likeButton.addEventListener("touchstart", like)
+    likeButton.addEventListener("click", like, { passive: true })
+    likeButton.addEventListener("touchstart", like, { passive: true })
 }
 
 incrementLikeOnPost();

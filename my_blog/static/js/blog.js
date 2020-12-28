@@ -37,5 +37,15 @@ function toggleProfileOptions() {
 
 }
 
+function activeCategory() {
+    const url = window.location.pathname.toLowerCase()
+    const navItems = document.querySelectorAll('.nav-bar__menu__item');
+    Array.from(navItems).forEach(n => {
+        const categoryName = n.innerText.toLowerCase().replace(" ", "-")
+        if (url === `/${categoryName}`) n.classList.add('active')
+    })
+}
+activeCategory()
+
 toggleSideMenu()
 toggleProfileOptions()

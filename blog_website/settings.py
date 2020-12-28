@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    # 'corsheaders',
 
     'my_blog',
     'write_blog',
@@ -50,9 +49,6 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-# CORS_ALLOW_ALL_ORIGINS = True
-
-# Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -96,7 +92,6 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -104,6 +99,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'compression_middleware.middleware.CompressionMiddleware',
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -197,17 +193,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATICFILES_STORAGE = 'compress_staticfiles.storage.CompressStaticFilesStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'global')
+    os.path.join(BASE_DIR, 'global'),
+    os.path.join(BASE_DIR, 'media')
 ]
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# PIPELINE = {
+#     'PIPELINE_ENABLED': True,
+#     'STYLESHEETS': {
+#         'style': {
+#             'source_filenames': (
+#                 'css/*.css',
+#             ),
+#             'output_filename': 'css/style.css',
+#             'variant': 'datauri',
+#         },
+#     },
+#     'JAVASCRIPT': {
+#         'stats': {
+#             'source_filenames': (
+#                 'js/*.js',
+#             ),
+#             'output_filename': 'js/stats.js',
+#         }
+#     }
+# }
 
+
+MEDIA_URL = '/media/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
 
 LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'

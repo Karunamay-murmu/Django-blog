@@ -17,14 +17,7 @@
 <meta property="article:modified_time" content="{{post.update_date}}" />
 <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/postPage.css' %}">
 <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/postCard.css' %}">
-<script type="text/javascript">
-    const path = "{{request.path}}";
-    const postId = "{{post.postId}}"
-</script>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
-<script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
-<script src="{% static 'js/prism.js' %}"></script>
-<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+<link rel="preload" as="style" onload="this.rel='stylesheet'" href="{% static 'css/prism.css' %}">
 {% endblock %}
 
 {% block body_block %}
@@ -106,5 +99,10 @@
     </div>
 </div>
 {% endif %}
-<script src="{% static 'js/postPage.js' %}"></script>
+<script type="text/javascript">
+    const path = "{{request.path}}";
+    const postId = "{{post.postId}}"
+</script>
+<script defer src="{% static 'js/prism.js' %}"></script>
+<script defer src="{% static 'js/postPage.js' %}"></script>
 {% endblock %}

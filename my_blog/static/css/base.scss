@@ -2,6 +2,13 @@
 
 #header {
     background-color: $primary;
+
+    .active {
+        border: none;
+        border-radius: 0.3rem;
+        background-color: $hover;
+    }
+
     .nav-bar {
         position: relative;
         width: 100%;
@@ -9,6 +16,7 @@
         padding: 0.5rem 1rem;
 
         &__menu-icon {
+
             &--burger,
             &--cross {
                 width: 1.5rem;
@@ -58,6 +66,7 @@
                         padding: 0.5rem 0 0.5rem 0.5rem;
                         font-weight: $bold;
                     }
+
                     &--icon {
                         width: 2rem;
                         fill: $text-light;
@@ -120,6 +129,7 @@
         }
     }
 }
+
 .search-bar {
     position: relative;
 
@@ -181,12 +191,14 @@
                 margin: 0 1rem;
                 flex-grow: 1;
             }
+
             .search-bar {
                 &--input {
                     width: 70%;
                 }
             }
         }
+
         &__menu-icon {
             &--burger {
                 display: none;
@@ -194,6 +206,7 @@
         }
     }
 }
+
 @media screen and (max-width: 978px) {
     .nav-bar {
         &__menu {
@@ -221,10 +234,12 @@
             .list {
                 margin: 1rem 0 2rem;
             }
+
             .list:nth-child(1) {
                 margin-top: 4rem;
             }
         }
+
         &__menu-icon {
             &--burger {
                 display: initial;
@@ -272,32 +287,40 @@
 .footer {
     padding-top: 2rem;
     border-top: 1px solid $white-bg;
+
     &__content {
         padding: 0.5rem;
     }
+
     .section {
         &__cta {
             max-width: 420px;
         }
+
         &--title {
             color: $primary;
             font-family: $large-text;
         }
+
         &--body {
             margin-top: 1.5rem;
             padding-right: 2rem;
+
             * {
                 font-size: 0.9rem;
                 font-family: $text;
             }
+
             &--cta {
                 margin-top: 1rem;
                 font-family: $text;
             }
         }
+
         &--description {
             line-height: 1.5rem;
         }
+
         &--email-input {
             .email-input {
                 width: 150%;
@@ -309,6 +332,7 @@
                 font-weight: $semi-bold;
                 font-size: 1rem;
             }
+
             .sub-btn {
                 background-color: $purple;
                 color: $text-light;
@@ -317,14 +341,17 @@
                 cursor: pointer;
             }
         }
+
         &--link-list {
             padding-left: 1rem;
             flex-wrap: wrap;
+
             li {
                 margin: 1rem 3rem 1rem 0;
                 padding: 0 0 0.8rem 0;
                 border-bottom: 1px solid $text-light;
             }
+
             li::before {
                 content: "\2022";
                 color: $secondary;
@@ -333,14 +360,17 @@
                 width: 1rem;
                 margin-left: -1rem;
             }
+
             .page-link {
                 display: inline-block;
                 width: 100%;
             }
         }
     }
+
     &__bar {
         background-color: $dark-bg;
+
         &--text {
             color: $text-light;
             font-size: 0.9rem;
@@ -361,6 +391,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 768px) {
     .footer {
         &__content {
@@ -372,16 +403,19 @@
                 "ads"
                 "links";
         }
+
         .section {
             &--body {
                 padding: 0;
             }
         }
+
         &__bar {
             &--text {
                 padding: 1.5rem 1rem;
             }
         }
+
         .section {
             &--ads-area {
                 margin: auto;
