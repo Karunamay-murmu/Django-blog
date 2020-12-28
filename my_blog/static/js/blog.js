@@ -19,7 +19,7 @@ function toggleProfileOptions() {
     const optionCard = profileIcon.nextElementSibling;
     let optionCardVisible = false
 
-    profileIcon.onmouseenter = function (e) {
+    function profileOptionCard(e) {
         optionCard.classList.add('display');
         optionCardVisible = true;
 
@@ -30,8 +30,11 @@ function toggleProfileOptions() {
             }
             optionCardVisible = false
         }
-
     }
+
+    profileIcon.addEventListener("click", profileOptionCard)
+    // profileIcon.addEventListener("touchstart", profileOptionCard)
+
 }
 
 toggleSideMenu()

@@ -3,7 +3,7 @@
 {% load social_share %}
 
 {% block head_block %}
-<title>{{post.meta_title}}</title>
+<title>{{post.title}}</title>
 <meta name="description" content="{{post.meta_description}}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="{{request.build_absolute_uri}}">
@@ -23,9 +23,6 @@
 </script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
 <script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
 <script src="{% static 'js/prism.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/prism.css' %}">
 {% endblock %}
@@ -47,7 +44,6 @@
     <!-- <img class="title-background" src="{% static 'media/title_background.jpg' %}" alt=""> -->
 </header>
 
-
 <div class="post flex flex-column">
     <section class="post-detail">
         <div class="post__featured-image">
@@ -56,7 +52,7 @@
             {% endif %}
         </div>
         <div class="post__content">
-            <article class="post__content--body">
+            <article class="post__content--body" id="postContent">
                 {{post.body|safe}}
             </article>
         </div>

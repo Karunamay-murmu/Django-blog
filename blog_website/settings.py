@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # 'corsheaders',
 
     'my_blog',
     'write_blog',
@@ -48,6 +49,8 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+
+# CORS_ALLOW_ALL_ORIGINS = True
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
@@ -93,6 +96,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 MIDDLEWARE = [
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,19 +132,7 @@ AUTH_USER_MODEL = "registration.User"
 
 WSGI_APPLICATION = 'blog_website.wsgi.application'
 
-ALLOWED_HOSTS = ['192.168.1.104', '192.168.1.100',
-                 '192.168.1.103', '127.0.0.1', 'localhost']
-
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+ALLOWED_HOSTS = ['192.168.1.104', 'localhost', '127.0.0.1']
 
 DATABASES = {
     'default': {
@@ -230,12 +222,13 @@ EMAIL_HOST_PASSWORD = 'Karan123@@##$$'
 
 OPTIMIZED_IMAGE_METHOD = 'pillow'
 
+TINYMCE_JS_URL = os.path.join(STATIC_URL + 'tinymce/tinymce.min.js')
+TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT + 'tinymce')
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'height': 550,
     'custom_undo_redo_levels': 20,
     'selector': '#id_body',
-    'theme': 'silver',
     'plugins': '''
             link image imagetools codesample
             table code lists nonbreaking visualblocks
@@ -251,6 +244,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'images_upload_url': MEDIA_URL + 'uploads/',
     'images_file_types': 'jpg,svg,webp',
     'automatic_uploads': True,
-    'image_width': '778'
-    # 'skin': 'custom'
+    'image_width': '778',
 }

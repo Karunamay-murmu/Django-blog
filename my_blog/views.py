@@ -37,6 +37,8 @@ class Search(View):
 
     def get(self, request, *args, **kwargs):
         query = request.GET['query']
+        all_posts = None
+
         if len(query) > 60 or len(query) == 0:
             posts = []
         else:

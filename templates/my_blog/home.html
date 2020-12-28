@@ -14,7 +14,7 @@
 <!-- <meta property="og:url" content="https://neilpatel.com/" /> -->
 <meta property="og:site_name" content="Neil Patel" />
 <link rel="preload" as="style" href="{% static 'css/home.css' %}" onload="this.rel='stylesheet'">
-
+<script defer src="{% static 'js/home.js' %}"></script>
 {% if not has_data %}
 <style>
     .sub-form {
@@ -66,7 +66,7 @@
                     <h2>
                         <a class="title" href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title|title}}</a>
                     </h2>
-                    <div class="excerpt">
+                    <div id="excerpt" class="excerpt">
                         {{post.body|safe|truncatewords_html:20}}
                     </div>
                     <div class="meta">
@@ -101,11 +101,10 @@
     </section>
     <section class="body">
         <div class="category-latest">
-            <h2 class="section-title">Latest From Category</h2>
+            <h2 class="section-title">Latest From Categories</h2>
             <div style="margin: 1rem 0;">
                 {% for category in categories %}
                 {% if category.posts %}
-                <h3 class="category-name">{{category.obj.name}}
                 </h3>
                 <div class="category-container">
                     {% for post in category.posts %}
@@ -124,7 +123,6 @@
             </div>
         </div>
         <div class="posts">
-            <h2 class="section-title">All post</h2>
             {% for post in posts|slice:"5:" %}
             <div class="post">
                 {% if post.featured_image %}

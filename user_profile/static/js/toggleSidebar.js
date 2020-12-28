@@ -31,6 +31,7 @@ class Sidebar {
             this.changeIcon('hide')
         }.bind(this)
     }
+    
     static toggle() {
         const sidebar = new Sidebar()
         document.addEventListener('DOMContentLoaded', () => {

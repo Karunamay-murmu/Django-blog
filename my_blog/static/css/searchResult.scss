@@ -8,9 +8,11 @@
         color: $text-dark;
         line-height: 1;
     }
+
     .post-list {
         max-width: 750px;
         margin: 1rem 0;
+
         .post-wrapper {
             max-width: 100%;
             margin: 1.5rem 0;
@@ -21,25 +23,30 @@
                 &__thumbnail {
                     width: 100%;
                     grid-area: thumbnail;
+
                     &--image {
                         object-fit: cover;
                         border-radius: 0.2rem;
                     }
                 }
+
                 &__details {
                     grid-area: details;
                 }
+
                 &--title {
                     font-family: $large-text;
                     font-weight: 500;
                     color: $text-dark;
                 }
+
                 &--content {
                     * {
                         font-family: $text;
                         font-size: 0.9rem;
                     }
                 }
+
                 &--meta {
                     font-family: $text;
                     font-size: 0.8rem;
@@ -58,13 +65,16 @@
             font-family: $text;
             font-size: 1.5rem;
             word-wrap: break-word;
+            line-height: 1.2;
         }
+
         &--query {
             font-family: $large-text;
             font-weight: $bold;
             font-size: 2rem;
         }
     }
+
     .search-bar {
         margin: 2rem 0;
         padding: 0.5rem 0 0 1rem;
@@ -77,6 +87,7 @@
             border: 1.8px solid $primary;
             background-color: #fff;
         }
+
         &--btn {
             margin: 1rem 0;
             width: 80px;
@@ -95,12 +106,14 @@
 
 .pagination {
     padding: 1rem 0 0 0;
+
     * {
         font-size: 0.85rem;
         color: $link;
         font-family: $text;
         font-weight: $bold;
     }
+
     .step-links {
         display: flex;
         justify-content: center;
@@ -131,6 +144,7 @@
         grid-template-areas:
             "thumbnail"
             "details";
+
         .post {
             &__thumbnail {
                 &--image {
@@ -138,6 +152,7 @@
                     height: 100%;
                 }
             }
+
             &__details {
                 padding: 0 0 1rem 0;
                 border-bottom: 1px solid rgba($secondary, 0.5);

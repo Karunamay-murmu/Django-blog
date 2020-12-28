@@ -30,6 +30,7 @@ class Dashboard(LoginRequiredMixin, View):
         return super(Dashboard, self).dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
+        print(args)
         return render(request, self.template_name)
 
 
