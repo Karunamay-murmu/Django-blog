@@ -10,12 +10,12 @@
 	</svg>
 	<h2><a class="nav-bar__logo" href="{% url 'blog:home' %}">Logo</a></h2>
 	<ul class="nav-bar__menu" id='navigation-menu'>
-		<li class="list"><a class='nav-bar__menu__item link' href="/Javascript">Javascript</a></li>
-		<li class="list"><a class='nav-bar__menu__item link' href="/Python">Python</a>
+		<li class="list"><a class='nav-bar__menu__item link' href="/category/Javascript">Javascript</a></li>
+		<li class="list"><a class='nav-bar__menu__item link' href="/category/Python">Python</a>
 		</li>
-		<li class="list"><a class='nav-bar__menu__item link' href="/Web-development">Web
+		<li class="list"><a class='nav-bar__menu__item link' href="/category/Web-development">Web
 				development</a></li>
-		<li class="list"><a class='nav-bar__menu__item link' href="/Programming">Programming</a>
+		<li class="list"><a class='nav-bar__menu__item link' href="/category/Programming">Programming</a>
 		</li>
 
 		<form action="{% url 'blog:search' %}" class="nav-bar__menu--search-bar flex flex-row" method="GET">

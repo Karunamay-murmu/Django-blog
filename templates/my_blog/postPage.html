@@ -61,7 +61,7 @@
                 <span>
                     Is this article helpful?
                 </span>
-                <form action="{% url 'blog:post_detail' slug=post.slug %}" method="post" id='likeForm'>
+                <div id='likeForm'>
                     {% csrf_token %}
                     <button id="likeButton" class="like-button post__footer__like--button" name="like" value="like">
                         <svg id="likeButtonSVG" class="post__footer__like--icon" xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@
                                 d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                         </svg>
                     </button>
-                </form>
+                </div>
                 <span id='postLikeCount' class="post__footer__like--count">{{post.totalLikes}}</span>
             </div>
             <div class="post__footer__share flex center-align">

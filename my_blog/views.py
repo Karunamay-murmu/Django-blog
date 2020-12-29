@@ -132,7 +132,7 @@ class PostPageView(View):
 
             return JsonResponse({'likes': post.liked})
 
-        return self.get(request, *args, **kwargs)
+        return HttpResponseRedirect(request.path)
 
 
 class Home(View):

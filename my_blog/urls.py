@@ -21,7 +21,7 @@ app_name = 'blog'
 urlpatterns = [
     path('', compress_page(Home.as_view()), name='home'),
     path('search', compress_page(Search.as_view()), name='search'),
-    path('<slug:slug>',
+    path('category/<slug:slug>',
          compress_page(CategoryPost.as_view()), name='category'),
     path('post/<str:id>/<slug:slug>/edit-post',
          compress_page(EditOrSwitchPostToDraft.as_view()), name='edit-post'),

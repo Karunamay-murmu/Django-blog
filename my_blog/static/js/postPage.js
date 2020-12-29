@@ -9,11 +9,9 @@ function incrementLikeOnPost() {
 
         likesOnPost.textContent = likes;
         likeButtonSVG.classList.add('liked')
-        likeButton.disabled = true;
     }
 
     function like(e) {
-        e.preventDefault();
         const csrftoken = likeButton.previousElementSibling.getAttribute('value')
         const data = {
             postid
@@ -38,8 +36,7 @@ function incrementLikeOnPost() {
         }
     }
 
-    likeButton.addEventListener("click", like, { passive: true })
-    likeButton.addEventListener("touchstart", like, { passive: true })
+    likeButton.addEventListener("click", like, { once: true })
 }
 
 incrementLikeOnPost();
