@@ -12,7 +12,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.core.paginator import Paginator
 
 from registration.models import User
-from my_blog.models import Post, Comment, Draft
+from blog.models import Post, Comment, Draft
 from .forms import EditProfileForm
 from write_blog.forms import postForm
 

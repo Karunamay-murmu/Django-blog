@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
-from my_blog.views import AboutView, handler404, handler500
+from blog.views import AboutView, handler404, handler500
 from write_blog.views import image_upload
 
 urlpatterns = [
@@ -14,7 +14,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('accounts/', include('allauth.urls')),
     path('media/images/uploads/', csrf_exempt(image_upload)),
-    path('', include('my_blog.urls')),
+    path('', include('blog.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

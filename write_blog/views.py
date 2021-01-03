@@ -21,7 +21,7 @@ from django.core.files import File
 from django.core.files.storage import FileSystemStorage
 
 from registration.models import User
-from my_blog.models import Tag, Post, Draft
+from blog.models import Tag, Post, Draft
 from .forms import postForm
 
 

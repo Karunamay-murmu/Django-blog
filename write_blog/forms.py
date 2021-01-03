@@ -2,7 +2,7 @@ from django import forms
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from my_blog.models import Categorie, Draft
+from blog.models import Categorie, Draft
 
 
 def postForm(modelName):

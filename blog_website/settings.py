@@ -16,7 +16,6 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
-    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -25,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'my_blog',
+    'blog',
+    'registration',
     'write_blog',
     'user_profile',
 
@@ -118,7 +118,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django_webp.context_processors.webp',
-                'my_blog.context_processors.subscriber_form',
+                'blog.context_processors.subscriber_form',
             ],
         },
     },
