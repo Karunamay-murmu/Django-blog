@@ -76,16 +76,13 @@
     }
 
     .search-bar {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         padding: 0.5rem 0 0 1rem;
         border-left: 3px solid $primary;
         border-radius: 0.2rem;
 
         &--input {
             max-width: 550px;
-            border-radius: 0.3rem;
-            border: 1.8px solid $primary;
-            background-color: #fff;
         }
 
         &--btn {
@@ -93,7 +90,7 @@
             width: 80px;
             background-color: $purple;
             color: $text-light;
-            border-radius: 0.3rem;
+            border-radius: 0.2rem;
             cursor: pointer;
 
             &:hover {

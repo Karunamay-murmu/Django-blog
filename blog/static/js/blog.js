@@ -33,7 +33,6 @@ function toggleProfileOptions() {
     }
 
     profileIcon.addEventListener("click", profileOptionCard)
-    // profileIcon.addEventListener("touchstart", profileOptionCard)
 
 }
 
@@ -42,10 +41,10 @@ function activeCategory() {
     const navItems = document.querySelectorAll('.nav-bar__menu__item');
     Array.from(navItems).forEach(n => {
         const categoryName = n.innerText.toLowerCase().replace(" ", "-")
-        if (url === `/${categoryName}`) n.classList.add('active')
+        if (url === `/category/${categoryName}`) n.classList.add('active')
     })
 }
-activeCategory()
 
+activeCategory()
 toggleSideMenu()
 toggleProfileOptions()

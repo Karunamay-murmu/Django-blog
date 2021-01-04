@@ -1,47 +1,34 @@
 @import "../../../global/css/variable.scss";
 
+#logo {
+    width: 12rem;
+    height: 50px;
+}
+
 #header {
-    background-color: $primary;
+    box-shadow: 0 .5px 5px rgba($secondary, .5);
 
     .active {
         border: none;
         border-radius: 0.3rem;
         background-color: $hover;
+        color: $text-light;
     }
 
     .nav-bar {
         position: relative;
         width: 100%;
-        height: 60px;
-        padding: 0.5rem 1rem;
+        height: 4.5rem;
+        padding: 0 1rem;
 
-        &__menu-icon {
-
-            &--burger,
-            &--cross {
-                width: 1.5rem;
-                fill: #fff;
-            }
+        &--logo-link {
+            height: 50px;
         }
 
-        &__logo,
-        &__menu__item {
-            color: $text-light;
-        }
-
-        &__menu__item {
-            margin: 0.2rem;
-            padding: 0.5rem 0.5rem;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: 300ms;
-            font-weight: $bold;
-
-            &:hover {
-                border: none;
-                border-radius: 0.3rem;
-                background-color: $hover;
-            }
+        &--burger,
+        &--cross {
+            width: 1.5rem;
+            fill: $primary;
         }
 
         &__auth {
@@ -50,26 +37,23 @@
 
             .auth {
                 &__profile {
-                    padding: 0.3rem 0.5rem 0.3rem 1rem;
+                    padding: 0.5rem;
                     border-radius: 0.2rem;
                     transition: 300ms;
                     cursor: pointer;
-
-                    &:hover {
-                        background-color: $hover;
-                    }
+                    box-shadow: 0 0 1px .2px $primary;
 
                     &--username {
-                        margin-right: 0.5rem;
-                        color: $text-light;
+                        color: $primary;
                         font-size: 0.9rem;
-                        padding: 0.5rem 0 0.5rem 0.5rem;
-                        font-weight: $bold;
+                        padding: 0 0 0 0.5rem;
+                        font-weight: $extra-bold;
+
                     }
 
                     &--icon {
-                        width: 2rem;
-                        fill: $text-light;
+                        width: 1.5rem;
+                        fill: $primary;
                     }
                 }
 
@@ -95,7 +79,6 @@
                                 color: $text-dark;
 
                                 &:hover {
-                                    // background-color: $hover;
                                     color: $link;
 
                                     &:nth-child(1) {
@@ -134,25 +117,23 @@
     position: relative;
 
     &--input {
-        padding: 0.7rem;
+        padding: 0.7rem .1rem;
         border: none;
-        border-top-left-radius: 0.2rem;
-        border-bottom-left-radius: 0.2rem;
+        box-shadow: 0 1.5px $primary;
         outline: none;
         float: left;
-        background: #f1f1f1;
         font-weight: $bold;
+        font-size: 1rem;
+        background: transparent;
     }
 
     &__btn {
         float: left;
         padding: 0.7rem 1rem;
-        background-color: $white-bg;
+        background-color: transparent;
         border: none;
-        border-top-right-radius: 0.2rem;
-        border-bottom-right-radius: 0.2rem;
+        box-shadow: 0 1.5px $primary;
         outline: none;
-        border-left: none;
         cursor: pointer;
 
         &--icon {
@@ -187,6 +168,23 @@
             width: 100%;
             margin: 0 1rem;
 
+            &__item {
+                color: $primary;
+                margin: 0.2rem;
+                padding: 0.5rem 0.5rem;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+                transition: 300ms;
+                font-weight: $extra-bold;
+
+                &:hover {
+                    border: none;
+                    border-radius: 0.2rem;
+                    background-color: $hover;
+                    color: $text-light;
+                }
+            }
+
             &--search-bar {
                 margin: 0 1rem;
                 flex-grow: 1;
@@ -199,16 +197,28 @@
             }
         }
 
-        &__menu-icon {
-            &--burger {
-                display: none;
-            }
+        &--burger {
+            display: none;
         }
     }
 }
 
 @media screen and (max-width: 978px) {
     .nav-bar {
+        &--burger {
+            display: initial;
+            margin-right: 1rem;
+        }
+
+        &--cross {
+            position: fixed;
+            top: 1rem;
+            left: 1.8rem;
+            z-index: 10;
+            fill: $text-light !important;
+
+        }
+
         &__menu {
             position: fixed;
             top: 0;
@@ -221,37 +231,45 @@
             transform: translateX(-100%);
             z-index: 5;
 
-            &--search-bar {
-                padding: 1rem 0.5rem;
-            }
-
-            .search-bar {
-                &--input {
-                    width: 100%;
-                }
-            }
-
-            .list {
-                margin: 1rem 0 2rem;
-            }
-
-            .list:nth-child(1) {
-                margin-top: 4rem;
+            &__item {
+                color: $text-light;
+                margin: 0.2rem;
+                padding: 0.5rem 0.5rem;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+                transition: 300ms;
+                font-weight: $extra-bold;
             }
         }
 
-        &__menu-icon {
-            &--burger {
-                display: initial;
-                margin-right: 1rem;
+        &--search-bar {
+            padding: 1rem 0.5rem;
+        }
+
+
+        .search-bar {
+            &--input {
+                width: 100%;
+                background: $white-bg !important;
+                padding: .5rem !important;
+                border-top-left-radius: .2rem;
+                border-bottom-left-radius: .2rem;
             }
 
-            &--cross {
-                position: fixed;
-                top: 1rem;
-                left: 1.8rem;
-                z-index: 10;
+            &__btn {
+                background-color: $white-bg !important;
+                border-top-right-radius: .2rem;
+                border-bottom-right-radius: .2rem;
             }
+
+        }
+
+        .list {
+            margin: 1rem 0 2rem;
+        }
+
+        .list:nth-child(1) {
+            margin-top: 4rem;
         }
     }
 }
