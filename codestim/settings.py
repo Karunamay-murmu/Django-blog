@@ -104,7 +104,7 @@ MIDDLEWARE = [
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-ROOT_URLCONF = 'blog_website.urls'
+ROOT_URLCONF = 'codestim.urls'
 
 TEMPLATES = [
     {
@@ -126,7 +126,7 @@ TEMPLATES = [
 
 AUTH_USER_MODEL = "registration.User"
 
-WSGI_APPLICATION = 'blog_website.wsgi.application'
+WSGI_APPLICATION = 'codestim.wsgi.application'
 
 ALLOWED_HOSTS = ['192.168.1.104', 'localhost', '127.0.0.1']
 
