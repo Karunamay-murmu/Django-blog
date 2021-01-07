@@ -202,29 +202,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'media')
 ]
 
-
-# PIPELINE = {
-#     'PIPELINE_ENABLED': True,
-#     'STYLESHEETS': {
-#         'style': {
-#             'source_filenames': (
-#                 'css/*.css',
-#             ),
-#             'output_filename': 'css/style.css',
-#             'variant': 'datauri',
-#         },
-#     },
-#     'JAVASCRIPT': {
-#         'stats': {
-#             'source_filenames': (
-#                 'js/*.js',
-#             ),
-#             'output_filename': 'js/stats.js',
-#         }
-#     }
-# }
-
-
 MEDIA_URL = '/media/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
 
