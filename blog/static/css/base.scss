@@ -1,7 +1,7 @@
 @import "../../../global/css/variable.scss";
 
 #logo {
-    width: 12rem;
+    width: 9rem;
     height: 50px;
 }
 
@@ -48,7 +48,6 @@
                         font-size: 0.9rem;
                         padding: 0 0 0 0.5rem;
                         font-weight: $extra-bold;
-
                     }
 
                     &--icon {
@@ -96,17 +95,16 @@
                 }
 
                 &__btn {
+                    width: 92px;
+                    text-align: center;
                     font-size: 0.9rem;
                     margin-left: 1rem;
                     border-radius: 0.2rem;
                     color: $primary;
                     cursor: pointer;
                     transition: 100ms;
-                    font-weight: $bold;
-
-                    &:hover {
-                        box-shadow: 0 8px 10px -5px $secondary;
-                    }
+                    font-weight: $extra-bold;
+                    box-shadow: 0 0 1px .2px $primary;
                 }
             }
         }

@@ -104,6 +104,8 @@ class PostPageView(View):
             'comments': comments
         }
 
+        print(context_dict)
+
         return render(request, self.template_name, context_dict)
 
     def post(self, request, *args, **kwargs):

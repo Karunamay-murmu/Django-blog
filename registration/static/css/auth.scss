@@ -3,6 +3,7 @@
 #content {
     padding: 1.5rem 0.5rem;
 }
+
 .wrapper {
     max-width: 450px;
     margin: auto;
@@ -21,6 +22,7 @@
             color: rgba($secondary, 1);
         }
     }
+
     .auth-form {
         flex-basis: 0;
         flex-grow: 1;
@@ -64,7 +66,6 @@
                     font-size: 1rem;
                     color: rgba($text-dark, 0.8);
                     outline: none;
-                    font-family: "Rubik", sans-serif;
                     flex-grow: 1;
                     padding-right: 1.5rem;
 
@@ -76,13 +77,16 @@
                 }
             }
         }
+
         &__btn {
             padding-top: 1.5rem;
+
             &--signup,
             &--login {
                 margin-top: 1rem;
                 color: #206a5d;
             }
+
             &--submit {
                 font-weight: bold;
                 width: 150px;
@@ -98,12 +102,14 @@
                     transition: 200ms;
                 }
             }
+
             &--reset {
                 margin-bottom: 0.3rem;
                 align-self: flex-end;
             }
         }
     }
+
     .auth-options {
         padding: 1rem;
         background-color: #fff;
@@ -116,6 +122,7 @@
             a {
                 padding: 0.5rem;
                 transition: 300ms;
+
                 &:hover {
                     color: $hover;
                 }
@@ -145,13 +152,16 @@
                 font-size: 1rem;
                 cursor: pointer;
                 transition: 200ms;
+
                 &:hover {
                     box-shadow: 0 1px 5px 0px $secondary;
                 }
+
                 svg {
                     width: 1.5rem;
                     fill: $secondary;
                 }
+
                 .btn-label {
                     margin-left: 1rem;
                 }

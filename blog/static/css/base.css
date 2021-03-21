@@ -1,5 +1,5 @@
 #logo {
-  width: 12rem;
+  width: 9rem;
   height: 50px;
 }
 
@@ -96,6 +96,8 @@
 }
 
 #header .nav-bar__auth .auth__btn {
+  width: 92px;
+  text-align: center;
   font-size: 0.9rem;
   margin-left: 1rem;
   border-radius: 0.2rem;
@@ -103,12 +105,9 @@
   cursor: pointer;
   -webkit-transition: 100ms;
   transition: 100ms;
-  font-weight: 600;
-}
-
-#header .nav-bar__auth .auth__btn:hover {
-  -webkit-box-shadow: 0 8px 10px -5px #52575d;
-          box-shadow: 0 8px 10px -5px #52575d;
+  font-weight: 700;
+  -webkit-box-shadow: 0 0 1px 0.2px #0f715d;
+          box-shadow: 0 0 1px 0.2px #0f715d;
 }
 
 .search-bar {

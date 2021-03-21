@@ -242,3 +242,39 @@ TINYMCE_DEFAULT_CONFIG = {
     'automatic_uploads': True,
     'image_width': '778',
 }
+
+'''
+server {
+
+    server_name www.codestim.com codestim.com;
+    client_max_body_size 10M;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/karunamay/codestim;
+    }
+    location /media/ {
+        root /home/karunamay/codestim;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass https://unix:/run/gunicorn.sock;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/codestim.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/codestim.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = www.codestim.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = codestim.com) {
+
+'''
